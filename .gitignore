@@ -1,0 +1,12 @@
+# Specify filepatterns you want git to ignore.
+
+Ultrasound.X/build/
+Ultrasound.X/debug/
+Ultrasound.X/disassembly/
+Ultrasound.X/dist/
+Ultrasound.X/nbproject/private/
+Ultrasound.X/nbproject/Package-*.bash
+Ultrasound.X/nbproject/Makefile-*
+util/~*
+
+git.bat
