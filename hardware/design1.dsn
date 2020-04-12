@@ -1,0 +1,2110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--This file was written by TinyCAD 3.00.02 Production Release
+If you wish to view this file go to https://www.tinycad.net to
+download the executable.-->
+<TinyCADSheets>
+	<TinyCAD>
+		<NAME>Sheet 1</NAME>
+		<DETAILS>
+			<Size width='1485' height='1050'/>
+			<GUIDES horiz='7' vert='5'/>
+			<TITLE></TITLE>
+			<AUTHOR></AUTHOR>
+			<REVISION>1.0</REVISION>
+			<DOCNUMBER></DOCNUMBER>
+			<ORGANISATION></ORGANISATION>
+			<SHEETS>1 of 1</SHEETS>
+			<SHOWS>0</SHOWS>
+			<DATE></DATE>
+			<GRID spacing='25.00000' snap='1'/>
+		</DETAILS>
+		<FONT id='1'>
+			<HEIGHT>-10</HEIGHT>
+			<WIDTH>0</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
+		<FONT id='3'>
+			<HEIGHT>-13</HEIGHT>
+			<WIDTH>6</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
+		<FONT id='4'>
+			<HEIGHT>-11</HEIGHT>
+			<WIDTH>5</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
+		<FONT id='5'>
+			<HEIGHT>-11</HEIGHT>
+			<WIDTH>5</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
+		<STYLE id='0'>
+			<STYLE>0</STYLE>
+			<COLOR>000000</COLOR>
+			<THICKNESS>1</THICKNESS>
+		</STYLE>
+		<STYLE id='7'>
+			<STYLE>0</STYLE>
+			<COLOR>000000</COLOR>
+			<THICKNESS>4</THICKNESS>
+		</STYLE>
+		<STYLE id='8'>
+			<STYLE>0</STYLE>
+			<COLOR>000000</COLOR>
+			<THICKNESS>3</THICKNESS>
+		</STYLE>
+		<STYLE id='9'>
+			<STYLE>0</STYLE>
+			<COLOR>000000</COLOR>
+			<THICKNESS>1</THICKNESS>
+		</STYLE>
+		<STYLE id='10'>
+			<STYLE>0</STYLE>
+			<COLOR>000000</COLOR>
+			<THICKNESS>2</THICKNESS>
+		</STYLE>
+		<FILL id='0'>
+			<INDEX>-1</INDEX>
+			<COLOR>000000</COLOR>
+		</FILL>
+		<FILL id='1'>
+			<INDEX>0</INDEX>
+			<COLOR>000000</COLOR>
+		</FILL>
+		<FILL id='2'>
+			<INDEX>0</INDEX>
+			<COLOR>FFFFFF</COLOR>
+		</FILL>
+		<SYMBOLDEF id='1'>
+			<NAME type='0'>PIC16F684</NAME>
+			<REF type='0'>U?</REF>
+			<DESCRIPTION></DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<FIELD>
+				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>package name for PCB layout</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='164.60000,110.00000'/>
+			<REF_POINT power='1' part='0' pos='164.60000,110.00000'/>
+			<TinyCAD>
+				<RECTANGLE a='128.00000,78.00000' b='148.00000,110.00000' style='7' fill='0'/>
+				<PIN pos='118.07157,82.14290' which='0' elec='0' direction='2' part='0' number='1' show='3' length='30' number_pos='0' centre_name='0'>Vdd</PIN>
+				<POLYGON pos='134.00000,78.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='4.00000,4.00000' arc='2'/>
+					<POINT pos='8.00000,0.00000' arc='1'/>
+				</POLYGON>
+				<POLYGON pos='118.00000,82.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<PIN pos='118.00000,86.00000' which='0' elec='5' direction='2' part='0' number='2' show='3' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='118.00000,90.00000' which='0' elec='5' direction='2' part='0' number='3' show='3' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='118.00000,94.00000' which='0' elec='0' direction='2' part='0' number='4' show='3' length='30' number_pos='0' centre_name='0'>RA3/Vpp</PIN>
+				<PIN pos='118.00000,98.00000' which='0' elec='1' direction='2' part='0' number='5' show='3' length='30' number_pos='0' centre_name='0'>P1A</PIN>
+				<PIN pos='118.00000,102.00000' which='0' elec='5' direction='2' part='0' number='6' show='3' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='118.00000,106.00000' which='0' elec='5' direction='2' part='0' number='7' show='3' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='158.00000,106.00000' which='0' elec='5' direction='3' part='0' number='8' show='3' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='158.00000,102.00000' which='0' elec='0' direction='3' part='0' number='9' show='3' length='30' number_pos='0' centre_name='0'>AN5</PIN>
+				<PIN pos='158.00000,98.00000' which='0' elec='0' direction='3' part='0' number='10' show='3' length='30' number_pos='0' centre_name='0'>AN4</PIN>
+				<PIN pos='158.00000,94.00000' which='0' elec='1' direction='3' part='0' number='11' show='3' length='30' number_pos='0' centre_name='0'>RA2</PIN>
+				<PIN pos='158.00000,90.00000' which='0' elec='5' direction='3' part='0' number='12' show='3' length='30' number_pos='0' centre_name='0'>ICSPCLK/RA1</PIN>
+				<PIN pos='158.00000,86.00000' which='0' elec='5' direction='3' part='0' number='13' show='3' length='30' number_pos='0' centre_name='0'>ICSPDAT/RA0</PIN>
+				<PIN pos='158.00000,82.00000' which='0' elec='0' direction='3' part='0' number='14' show='3' length='30' number_pos='0' centre_name='0'>VSS</PIN>
+				<POLYGON pos='118.00000,86.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='118.00000,90.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='118.00000,94.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='118.00000,98.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='118.00000,102.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='118.00000,106.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='148.00000,82.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='148.00000,86.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='148.00000,90.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='148.00000,94.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='148.00000,98.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='148.00000,102.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='148.00000,106.00000' style='8' fill='0' polygon='0'>
+					<POINT pos='10.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='2'>
+			<NAME type='0'>5x1_HDR</NAME>
+			<REF type='1'>H?</REF>
+			<DESCRIPTION>5x1 .1 in pitch through-hole header (male or female)</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>5SIP100</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Usage</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Datasheet</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Picture</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Digi-Key Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Newark Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Mouser Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Cost</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='38.00000,34.00000'/>
+			<TinyCAD>
+				<RECTANGLE a='28.00000,29.00000' b='30.00000,31.00000' style='9' fill='1'/>
+				<ELLIPSE a='30.00000,29.00000' b='32.00000,31.00000' style='9' fill='0'/>
+				<PIN pos='29.00000,34.00000' which='0' elec='4' direction='0' part='0' number='1' show='3' length='15' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='1' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='1' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='2' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='2' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='3' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='3' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='4' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='4' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='5' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='5' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='6' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='6' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='7' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='7' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='8' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='8' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='9' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='9' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='10' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='10' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='11' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='11' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='12' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='12' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='13' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='13' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='14' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='14' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='15' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='15' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='16' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='16' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='17' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='17' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='18' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='18' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='19' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='19' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='20' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='20' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='21' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='21' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='22' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='22' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='23' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='23' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,38.00000' which='0' elec='4' direction='0' part='24' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='28.00000,20.00000' which='0' elec='4' direction='1' part='24' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='31.00000,34.00000' which='0' elec='0' direction='0' part='0' number='2' show='1' length='15' number_pos='0' centre_name='0'></PIN>
+				<ELLIPSE a='32.00000,29.00000' b='34.00000,31.00000' style='9' fill='0'/>
+				<PIN pos='33.00000,34.00000' which='0' elec='0' direction='0' part='0' number='3' show='1' length='15' number_pos='0' centre_name='0'></PIN>
+				<RECTANGLE a='28.00000,29.00000' b='38.00000,31.00000' style='9' fill='0'/>
+				<ELLIPSE a='34.00000,29.00000' b='36.00000,31.00000' style='9' fill='0'/>
+				<PIN pos='35.00000,34.00000' which='0' elec='0' direction='0' part='0' number='4' show='1' length='15' number_pos='0' centre_name='0'></PIN>
+				<ELLIPSE a='36.00000,29.00000' b='38.00000,31.00000' style='9' fill='0'/>
+				<PIN pos='37.00000,34.00000' which='0' elec='0' direction='0' part='0' number='5' show='1' length='15' number_pos='0' centre_name='0'></PIN>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='3'>
+			<NAME type='0'>VREG</NAME>
+			<REF type='0'>U?</REF>
+			<DESCRIPTION>Fixed Voltage Reg.</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<REF_POINT power='0' part='0' pos='50.00000,58.00000'/>
+			<TinyCAD>
+				<PIN pos='39.00000,58.00000' which='0' elec='0' direction='0' part='0' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='50.00000,48.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='39.00000,38.00000' which='0' elec='1' direction='1' part='0' number='3' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<TEXT pos='45.00000,48.00000' direction='3' font='5' color='000000'>Gnd</TEXT>
+				<TEXT pos='39.00000,43.00000' direction='0' font='5' color='000000'>Out</TEXT>
+				<TEXT pos='39.00000,56.00000' direction='0' font='5' color='000000'>In</TEXT>
+				<POLYGON pos='39.00000,52.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='39.00000,43.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='44.00000,48.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<RECTANGLE a='38.00000,44.00000' b='44.00000,52.00000' style='9' fill='0'/>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='4'>
+			<NAME type='0'>RE1</NAME>
+			<REF type='0'>R?</REF>
+			<DESCRIPTION>Small Resistor</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<REF_POINT power='0' part='0' pos='79.00000,64.80000'/>
+			<TinyCAD>
+				<PIN pos='78.00000,64.80000' which='0' elec='0' direction='0' part='0' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='78.00000,47.00000' which='0' elec='0' direction='1' part='0' number='2' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='77.00000,54.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,53.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,55.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,56.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,57.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,53.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.40000' arc='0'/>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='78.00000,58.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.40000' arc='0'/>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='5'>
+			<NAME type='0'>LED</NAME>
+			<REF type='1'>D?</REF>
+			<DESCRIPTION>Generic Small Radial LED</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>LED-T1</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Usage</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Datasheet</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Picture</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Vf</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>If</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Brightness</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Color</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Digi-Key Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Newark Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Mouser Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Cost</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='104.20000,123.00000'/>
+			<TinyCAD>
+				<RECTANGLE a='100.00000,120.00000' b='96.00000,120.30000' style='9' fill='1'/>
+				<POLYGON pos='96.00000,116.80000' style='9' fill='1' polygon='1'>
+					<POINT pos='2.05000,3.15000' arc='0'/>
+					<POINT pos='4.05000,0.15000' arc='0'/>
+					<POINT pos='0.05000,0.15000' arc='0'/>
+					<POINT pos='2.05000,3.15000' arc='0'/>
+				</POLYGON>
+				<PIN pos='98.00000,114.00000' which='0' elec='4' direction='1' part='0' number='1' show='1' length='15' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='98.00000,123.00000' which='0' elec='4' direction='0' part='0' number='2' show='1' length='15' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='102.80000,117.00000' style='9' fill='1' polygon='1'>
+					<POINT pos='1.51000,0.49000' arc='0'/>
+					<POINT pos='0.16000,0.04000' arc='0'/>
+					<POINT pos='0.16000,0.89000' arc='0'/>
+					<POINT pos='1.51000,0.49000' arc='0'/>
+				</POLYGON>
+				<WIRE style='0' a='103.31000,117.49000' b='102.06000,117.49000'/>
+				<POLYGON pos='103.00000,118.60000' style='9' fill='1' polygon='1'>
+					<POINT pos='1.35000,0.49000' arc='0'/>
+					<POINT pos='-0.00000,0.04000' arc='0'/>
+					<POINT pos='-0.00000,0.89000' arc='0'/>
+					<POINT pos='1.35000,0.49000' arc='0'/>
+				</POLYGON>
+				<WIRE style='0' a='103.35000,119.09000' b='102.10000,119.09000'/>
+				<ELLIPSE a='94.92000,115.48000' b='100.92000,121.48000' style='9' fill='0'/>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='6'>
+			<NAME type='0'>RE1</NAME>
+			<REF type='0'>R?</REF>
+			<DESCRIPTION>Small Resistor</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<REF_POINT power='0' part='0' pos='79.00000,64.80000'/>
+			<TinyCAD>
+				<PIN pos='78.00000,64.80000' which='0' elec='0' direction='0' part='0' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='78.00000,47.00000' which='0' elec='0' direction='1' part='0' number='2' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='77.00000,54.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,53.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,55.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,56.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,57.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,53.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.40000' arc='0'/>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='78.00000,58.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.40000' arc='0'/>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='7'>
+			<NAME type='0'>LED</NAME>
+			<REF type='1'>D?</REF>
+			<DESCRIPTION>Generic Small Radial LED</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>LED-T1</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Usage</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Datasheet</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Picture</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Vf</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>If</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Brightness</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Color</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Digi-Key Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Newark Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Mouser Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Cost</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='104.20000,123.00000'/>
+			<TinyCAD>
+				<RECTANGLE a='100.00000,120.00000' b='96.00000,120.30000' style='9' fill='1'/>
+				<POLYGON pos='96.00000,116.80000' style='9' fill='1' polygon='1'>
+					<POINT pos='2.05000,3.15000' arc='0'/>
+					<POINT pos='4.05000,0.15000' arc='0'/>
+					<POINT pos='0.05000,0.15000' arc='0'/>
+					<POINT pos='2.05000,3.15000' arc='0'/>
+				</POLYGON>
+				<PIN pos='98.00000,114.00000' which='0' elec='4' direction='1' part='0' number='1' show='1' length='15' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='98.00000,123.00000' which='0' elec='4' direction='0' part='0' number='2' show='1' length='15' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='102.80000,117.00000' style='9' fill='1' polygon='1'>
+					<POINT pos='1.51000,0.49000' arc='0'/>
+					<POINT pos='0.16000,0.04000' arc='0'/>
+					<POINT pos='0.16000,0.89000' arc='0'/>
+					<POINT pos='1.51000,0.49000' arc='0'/>
+				</POLYGON>
+				<WIRE style='0' a='103.31000,117.49000' b='102.06000,117.49000'/>
+				<POLYGON pos='103.00000,118.60000' style='9' fill='1' polygon='1'>
+					<POINT pos='1.35000,0.49000' arc='0'/>
+					<POINT pos='-0.00000,0.04000' arc='0'/>
+					<POINT pos='-0.00000,0.89000' arc='0'/>
+					<POINT pos='1.35000,0.49000' arc='0'/>
+				</POLYGON>
+				<WIRE style='0' a='103.35000,119.09000' b='102.10000,119.09000'/>
+				<ELLIPSE a='94.92000,115.48000' b='100.92000,121.48000' style='9' fill='0'/>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='8'>
+			<NAME type='0'>POT1</NAME>
+			<REF type='0'>R?</REF>
+			<DESCRIPTION>Variable Resistor (USA Style)</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<REF_POINT power='0' part='0' pos='80.00000,54.00000'/>
+			<TinyCAD>
+				<PIN pos='70.00000,34.00000' which='0' elec='4' direction='1' part='0' number='2' show='0' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='70.00000,54.00000' which='0' elec='4' direction='0' part='0' number='1' show='0' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='80.00000,44.00000' which='0' elec='4' direction='2' part='0' number='3' show='0' length='30' number_pos='0' centre_name='0'>adj</PIN>
+				<POLYGON pos='68.00000,40.60000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='68.00000,41.60000' style='9' fill='0' polygon='0'>
+					<POINT pos='4.00000,1.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='68.00000,42.60000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+					<POINT pos='4.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='68.00000,43.60000' style='9' fill='0' polygon='0'>
+					<POINT pos='4.00000,1.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='68.00000,44.60000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+					<POINT pos='4.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='68.00000,45.60000' style='9' fill='0' polygon='0'>
+					<POINT pos='4.00000,1.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='70.00000,46.60000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='70.00000,47.60000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.40000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='70.00000,40.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.60000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='72.00000,44.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='72.00000,43.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='72.00000,44.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='1.00000,1.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='9'>
+			<NAME type='0'>NPN</NAME>
+			<REF type='1'>Q?</REF>
+			<DESCRIPTION>NPN Transistor</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT></DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Pmax</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>IcMax</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>VceMax</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Hfe</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>VceSat</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>VbeSat</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>HfeSat</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Digi-Key Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Newark Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Mouser Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Cost</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='61.00000,59.00000'/>
+			<TinyCAD>
+				<PIN pos='54.00000,59.00000' which='0' elec='0' direction='0' part='0' number='1' show='1' length='15' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='61.00000,51.00000' which='0' elec='0' direction='2' part='0' number='2' show='1' length='15' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='47.00000,51.00000' which='0' elec='1' direction='3' part='0' number='3' show='1' length='15' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='52.00000,53.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='4.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='51.00000,51.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='2.00000,2.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='55.00000,51.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,2.00000' arc='0'/>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='50.00000,51.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='57.00000,51.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='54.00000,53.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,3.00000' arc='0'/>
+				</POLYGON>
+				<ELLIPSE a='50.00000,48.00000' b='58.00000,56.00000' style='9' fill='0'/>
+				<POLYGON pos='56.00000,51.00000' style='9' fill='1' polygon='1'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='1.00000,1.00000' arc='0'/>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='10'>
+			<NAME type='0'>PMOSFET_DEP</NAME>
+			<REF type='0'>Z?</REF>
+			<DESCRIPTION></DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT></DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>None</NAME>
+				<DEFAULT>None</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='23.00000,28.00000'/>
+			<TinyCAD>
+				<PIN pos='21.00000,28.00000' which='0' elec='4' direction='0' part='0' number='3' show='2' length='15' number_pos='0' centre_name='0'>SOURCE</PIN>
+				<PIN pos='21.00000,16.00000' which='0' elec='4' direction='1' part='0' number='2' show='2' length='15' number_pos='0' centre_name='0'>DRAIN</PIN>
+				<PIN pos='15.00000,24.00000' which='0' elec='4' direction='3' part='0' number='1' show='2' length='15' number_pos='0' centre_name='0'>GATE</PIN>
+				<POLYGON pos='19.00000,19.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,6.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='18.00000,20.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,4.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='19.00000,24.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='19.00000,19.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='21.60000,21.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='1.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='21.60000,22.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='19.60000,22.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='3.00000,0.00000' arc='0'/>
+					<POINT pos='3.00000,4.00000' arc='0'/>
+					<POINT pos='1.50000,4.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='11'>
+			<NAME type='0'>MOTOR_1PHASE</NAME>
+			<REF type='1'>M?</REF>
+			<DESCRIPTION>Brushed DC motor</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT></DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>V_Max</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>I_Max</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>R_Arm</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>L_Arm</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>V_BEMF</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>W_Max</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>T_Max</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Tau_Mech</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Tau_Elec</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Digi-Key Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Newark Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Mouser Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Cost</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='32.00000,26.00000'/>
+			<TinyCAD>
+				<WIRE a='21.40000,23.00000' b='21.40000,22.00000'/>
+				<RECTANGLE a='27.40000,24.00000' b='29.40000,22.00000' style='9' fill='1'/>
+				<RECTANGLE a='23.40000,24.00000' b='21.40000,22.00000' style='9' fill='1'/>
+				<PIN pos='32.00000,23.00000' which='0' elec='4' direction='2' part='0' number='1' show='0' length='15' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='19.00000,23.00000' which='0' elec='4' direction='3' part='0' number='2' show='0' length='15' number_pos='0' centre_name='0'></PIN>
+				<ELLIPSE a='22.40000,26.00000' b='28.40000,20.00000' style='9' fill='2'/>
+				<TEXT pos='24.20000,24.60000' direction='3' font='3' color='000000'>M</TEXT>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='12'>
+			<NAME type='0'>D2</NAME>
+			<REF type='0'>D?</REF>
+			<DESCRIPTION>small diode</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<REF_POINT power='0' part='0' pos='42.00000,26.00000'/>
+			<TinyCAD>
+				<PIN pos='40.00000,26.00000' which='0' elec='0' direction='0' part='0' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='40.00000,12.00000' which='0' elec='0' direction='1' part='0' number='2' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='38.00000,20.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='4.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='40.00000,18.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='2.00000,2.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='38.00000,18.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,2.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='38.00000,18.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='4.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='40.00000,20.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='40.00000,17.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='13'>
+			<NAME type='0'>BATTERY</NAME>
+			<REF type='0'>B?</REF>
+			<DESCRIPTION>Battery</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<REF_POINT power='0' part='0' pos='70.00000,45.00000'/>
+			<TinyCAD>
+				<PIN pos='66.00000,45.00000' which='0' elec='4' direction='0' part='0' number='1' show='0' length='30' number_pos='0' centre_name='0'>+</PIN>
+				<PIN pos='66.00000,27.20000' which='0' elec='4' direction='1' part='0' number='2' show='0' length='30' number_pos='0' centre_name='0'>-</PIN>
+				<POLYGON pos='62.00000,39.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='8.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='64.00000,37.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='4.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='64.00000,33.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='4.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='62.00000,35.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='8.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='14'>
+			<NAME type='0'>C</NAME>
+			<REF type='1'>C?</REF>
+			<DESCRIPTION>Capacitor</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT></DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Value</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Tol.</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>V_Max</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>ESR</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Material</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Digi-Key Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Newark Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Mouser Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Cost</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='60.00000,53.00000'/>
+			<TinyCAD>
+				<PIN pos='58.00000,45.00000' which='0' elec='4' direction='1' part='0' number='2' show='0' length='15' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='58.00000,53.00000' which='0' elec='4' direction='0' part='0' number='1' show='0' length='15' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='56.00000,48.00000' style='10' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='4.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='56.00000,50.00000' style='10' fill='0' polygon='0'>
+					<POINT pos='4.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='15'>
+			<NAME type='0'>D</NAME>
+			<REF type='1'>D?</REF>
+			<DESCRIPTION>Diode</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT></DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Pmax</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>IfMax</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>VrMax</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>VfMax</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Vf</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Digi-Key Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Newark Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Mouser Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Cost</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='69.00000,76.00000'/>
+			<TinyCAD>
+				<PIN pos='67.00000,67.00000' which='0' elec='4' direction='1' part='0' number='1' show='0' length='15' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='67.00000,76.00000' which='0' elec='4' direction='0' part='0' number='2' show='0' length='15' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='65.40000,73.00000' style='10' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='3.20000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='65.00000,70.00000' style='9' fill='1' polygon='1'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,3.00000' arc='0'/>
+					<POINT pos='4.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='16'>
+			<NAME type='0'>RE1</NAME>
+			<REF type='0'>R?</REF>
+			<DESCRIPTION>Small Resistor</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<REF_POINT power='0' part='0' pos='79.00000,64.80000'/>
+			<TinyCAD>
+				<PIN pos='78.00000,64.80000' which='0' elec='0' direction='0' part='0' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='78.00000,47.00000' which='0' elec='0' direction='1' part='0' number='2' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='77.00000,54.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,53.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,55.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,56.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,57.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,53.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.40000' arc='0'/>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='78.00000,58.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.40000' arc='0'/>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='17'>
+			<NAME type='0'>C</NAME>
+			<REF type='0'>C?</REF>
+			<DESCRIPTION>Capacitor</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<REF_POINT power='0' part='0' pos='62.00000,56.00000'/>
+			<TinyCAD>
+				<PIN pos='58.00000,42.00000' which='0' elec='4' direction='1' part='0' number='2' show='0' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='58.00000,56.00000' which='0' elec='4' direction='0' part='0' number='1' show='0' length='30' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='54.00000,48.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='8.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='54.00000,50.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='8.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='18'>
+			<NAME type='0'>C</NAME>
+			<REF type='0'>C?</REF>
+			<DESCRIPTION>Capacitor</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<REF_POINT power='0' part='0' pos='62.00000,56.00000'/>
+			<TinyCAD>
+				<PIN pos='58.00000,42.00000' which='0' elec='4' direction='1' part='0' number='2' show='0' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='58.00000,56.00000' which='0' elec='4' direction='0' part='0' number='1' show='0' length='30' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='54.00000,48.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='8.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='54.00000,50.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='8.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='19'>
+			<NAME type='0'>C</NAME>
+			<REF type='0'>C?</REF>
+			<DESCRIPTION>Capacitor</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<REF_POINT power='0' part='0' pos='62.00000,56.00000'/>
+			<TinyCAD>
+				<PIN pos='58.00000,42.00000' which='0' elec='4' direction='1' part='0' number='2' show='0' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='58.00000,56.00000' which='0' elec='4' direction='0' part='0' number='1' show='0' length='30' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='54.00000,48.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='8.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='54.00000,50.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='8.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='20'>
+			<NAME type='0'>MOM_SPDT</NAME>
+			<REF type='1'>SW?</REF>
+			<DESCRIPTION>Momentary SPDT pushbutton</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT></DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>V_Max</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>I_Max</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>R_Max</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>V_Max_AC</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>I_Max_AC</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Manufacturer Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Digi-Key Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Newark Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Mouser Part</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Cost</NAME>
+				<DEFAULT>..</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='92.00000,45.00000'/>
+			<TinyCAD>
+				<PIN pos='72.00000,44.00000' which='0' elec='4' direction='3' part='0' number='2' show='0' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='92.00000,44.00000' which='0' elec='4' direction='2' part='0' number='1' show='0' length='30' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='78.00000,40.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='8.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='82.00000,38.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,2.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='81.00000,38.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<ELLIPSE a='80.00000,43.00000' b='78.00000,45.00000' style='10' fill='0'/>
+				<ELLIPSE a='84.00000,43.00000' b='86.00000,45.00000' style='10' fill='0'/>
+				<PIN pos='92.00000,39.00000' which='0' elec='4' direction='2' part='0' number='1' show='0' length='30' number_pos='0' centre_name='0'></PIN>
+				<ELLIPSE a='80.00000,38.00000' b='78.00000,40.00000' style='10' fill='0'/>
+				<ELLIPSE a='84.00000,38.00000' b='86.00000,40.00000' style='10' fill='0'/>
+				<POLYGON pos='75.00000,39.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,5.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='3.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='21'>
+			<NAME type='0'>C</NAME>
+			<REF type='0'>C?</REF>
+			<DESCRIPTION>Capacitor</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<REF_POINT power='0' part='0' pos='62.00000,56.00000'/>
+			<TinyCAD>
+				<PIN pos='58.00000,42.00000' which='0' elec='4' direction='1' part='0' number='2' show='0' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='58.00000,56.00000' which='0' elec='4' direction='0' part='0' number='1' show='0' length='30' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='54.00000,48.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='8.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='54.00000,50.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='8.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='22'>
+			<NAME type='0'>RE1</NAME>
+			<REF type='0'>R?</REF>
+			<DESCRIPTION>Small Resistor</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<REF_POINT power='0' part='0' pos='79.00000,64.80000'/>
+			<TinyCAD>
+				<PIN pos='78.00000,64.80000' which='0' elec='0' direction='0' part='0' number='1' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='78.00000,47.00000' which='0' elec='0' direction='1' part='0' number='2' show='1' length='30' number_pos='0' centre_name='0'></PIN>
+				<POLYGON pos='77.00000,54.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,53.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,55.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,56.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='2.00000,0.00000' arc='0'/>
+					<POINT pos='0.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,57.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='2.00000,1.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='77.00000,53.00000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.40000' arc='0'/>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+				</POLYGON>
+				<POLYGON pos='78.00000,58.40000' style='9' fill='0' polygon='0'>
+					<POINT pos='0.00000,0.40000' arc='0'/>
+					<POINT pos='1.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<OPTIONS>
+			<GRID>0</GRID>
+			<UNITS>0</UNITS>
+			<COLOR_WIRE>FF0000</COLOR_WIRE>
+			<COLOR_BUS>0000FF</COLOR_BUS>
+			<COLOR_JUNCTION>000000</COLOR_JUNCTION>
+			<COLOR_NOCONNECT>000000</COLOR_NOCONNECT>
+			<COLOR_LABEL>208000</COLOR_LABEL>
+			<COLOR_POWER>000000</COLOR_POWER>
+			<COLOR_PIN>4040C0</COLOR_PIN>
+			<COLOR_HIDDEN_PIN>208020</COLOR_HIDDEN_PIN>
+			<COLOR_BACKGROUND>FFFFFF</COLOR_BACKGROUND>
+			<COLOR_NOTETEXT_FILL>AFFFFF</COLOR_NOTETEXT_FILL>
+			<COLOR_NOTETEXT_LINE>FF0000</COLOR_NOTETEXT_LINE>
+			<COLOR_NOTETEXT_TEXT>FF0000</COLOR_NOTETEXT_TEXT>
+		</OPTIONS>
+		<SYMBOL id='1' pos='152.25231,106.57538' part='0' rotate='0' can_scale='0' show_power='1' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='U?' show='0' pos='1.00000,-27.60000'/>
+			<FIELD type='0' description='Name' value='PIC16F684' show='1' pos='-32.03846,-24.23077'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='1.00000,-25.20000'/>
+		</SYMBOL>
+		<SYMBOL id='2' pos='129.60000,53.08000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='1' description='Ref' value='H?' show='0' pos='1.00000,-0.60000'/>
+			<FIELD type='0' description='Name' value='ICSP' show='1' pos='-6.70000,-5.70000'/>
+			<FIELD type='1' description='Package' value='5SIP100' show='0' pos='1.00000,1.80000'/>
+			<FIELD type='1' description='Usage' value='..' show='0' pos='1.00000,4.20000'/>
+			<FIELD type='1' description='Datasheet' value='..' show='0' pos='1.00000,6.60000'/>
+			<FIELD type='1' description='Picture' value='..' show='0' pos='1.00000,9.00000'/>
+			<FIELD type='1' description='Manufacturer' value='..' show='0' pos='1.00000,11.40000'/>
+			<FIELD type='1' description='Manufacturer Part' value='..' show='0' pos='1.00000,13.80000'/>
+			<FIELD type='1' description='Digi-Key Part' value='..' show='0' pos='1.00000,16.20000'/>
+			<FIELD type='1' description='Newark Part' value='..' show='0' pos='1.00000,18.60000'/>
+			<FIELD type='1' description='Mouser Part' value='..' show='0' pos='1.00000,21.00000'/>
+			<FIELD type='1' description='Cost' value='..' show='0' pos='1.00000,23.40000'/>
+		</SYMBOL>
+		<WIRE a='120.60000,53.08000' b='89.10000,53.08000'/>
+		<WIRE a='89.10000,53.08000' b='89.10000,90.57538'/>
+		<WIRE a='89.50000,90.57538' b='105.65231,90.57538'/>
+		<WIRE a='126.60000,53.08000' b='126.58048,53.08000'/>
+		<WIRE a='126.58048,53.08000' b='126.58048,59.48489'/>
+		<WIRE a='170.34646,86.50314' b='170.34646,86.57538'/>
+		<WIRE a='170.34646,86.57538' b='145.65231,86.57538'/>
+		<LABEL pos='107.33018,53.19834' direction='3' font='3' color='208000' style='0'>MCLR</LABEL>
+		<LABEL pos='113.60000,62.27574' direction='2' font='3' color='208000' style='0'>Vdd</LABEL>
+		<LABEL pos='137.58943,62.62781' direction='2' font='4' color='208000' style='0'>GND</LABEL>
+		<LABEL pos='144.58048,59.61893' direction='2' font='4' color='208000' style='0'>Data</LABEL>
+		<LABEL pos='145.56095,53.08000' direction='2' font='4' color='208000' style='0'>Clock</LABEL>
+		<SYMBOL id='3' pos='208.93669,32.41183' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='U?' show='0' pos='-17.63314,-4.39053'/>
+			<FIELD type='0' description='Name' value='VREG' show='1' pos='-13.00000,-7.56000'/>
+			<FIELD type='3' description='Number' value='78M05BT' show='1' pos='-14.13314,-13.49053'/>
+		</SYMBOL>
+		<WIRE a='94.47515,21.41183' b='94.47515,78.71828'/>
+		<WIRE a='94.47515,78.71828' b='105.72388,78.71828'/>
+		<NOCONNECT pos='105.65231,82.57538'/>
+		<NOCONNECT pos='105.65231,86.57538'/>
+		<NOCONNECT pos='105.65231,98.57538'/>
+		<NOCONNECT pos='105.65231,102.57538'/>
+		<NOCONNECT pos='145.65231,102.57538'/>
+		<SYMBOL id='4' pos='195.32280,100.50314' part='0' rotate='1' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='R?' show='0' pos='1.00000,-13.40000'/>
+			<FIELD type='0' description='Name' value='RE1' show='0' pos='0.50000,-12.30000'/>
+			<FIELD type='3' description='value' value='390' show='1' pos='0.50000,-8.40000'/>
+		</SYMBOL>
+		<SYMBOL id='5' pos='200.51170,113.26607' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='1' description='Ref' value='D?' show='0' pos='1.00000,-4.60000'/>
+			<FIELD type='0' description='Name' value='LED_dat' show='1' pos='-6.00000,-8.50000'/>
+			<FIELD type='1' description='Package' value='LED-T1' show='0' pos='1.00000,-2.20000'/>
+			<FIELD type='1' description='Usage' value='..' show='0' pos='1.00000,0.20000'/>
+			<FIELD type='1' description='Datasheet' value='..' show='0' pos='1.00000,2.60000'/>
+			<FIELD type='1' description='Picture' value='..' show='0' pos='1.00000,5.00000'/>
+			<FIELD type='1' description='Vf' value='..' show='0' pos='1.00000,7.40000'/>
+			<FIELD type='1' description='If' value='..' show='0' pos='1.00000,9.80000'/>
+			<FIELD type='1' description='Brightness' value='..' show='0' pos='1.00000,12.20000'/>
+			<FIELD type='1' description='Color' value='red' show='1' pos='-5.00000,0.10000'/>
+			<FIELD type='1' description='Manufacturer' value='..' show='0' pos='1.00000,17.00000'/>
+			<FIELD type='1' description='Manufacturer Part' value='..' show='0' pos='1.00000,19.40000'/>
+			<FIELD type='1' description='Digi-Key Part' value='..' show='0' pos='1.00000,21.80000'/>
+			<FIELD type='1' description='Newark Part' value='..' show='0' pos='1.00000,24.20000'/>
+			<FIELD type='1' description='Mouser Part' value='..' show='0' pos='1.00000,26.60000'/>
+			<FIELD type='1' description='Cost' value='..' show='0' pos='1.00000,29.00000'/>
+		</SYMBOL>
+		<SYMBOL id='6' pos='184.32280,104.50314' part='0' rotate='1' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='R?' show='0' pos='1.00000,-13.40000'/>
+			<FIELD type='0' description='Name' value='RE1' show='0' pos='0.00000,-12.30000'/>
+			<FIELD type='3' description='value' value='390' show='1' pos='0.50000,-7.90000'/>
+		</SYMBOL>
+		<SYMBOL id='7' pos='189.51170,115.26607' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='1' description='Ref' value='D?' show='0' pos='1.00000,-4.60000'/>
+			<FIELD type='0' description='Name' value='LED_clk' show='1' pos='-6.50000,-8.50000'/>
+			<FIELD type='1' description='Package' value='LED-T1' show='0' pos='1.00000,-2.20000'/>
+			<FIELD type='1' description='Usage' value='..' show='0' pos='1.00000,0.20000'/>
+			<FIELD type='1' description='Datasheet' value='..' show='0' pos='1.00000,2.60000'/>
+			<FIELD type='1' description='Picture' value='..' show='0' pos='1.00000,5.00000'/>
+			<FIELD type='1' description='Vf' value='..' show='0' pos='1.00000,7.40000'/>
+			<FIELD type='1' description='If' value='..' show='0' pos='1.00000,9.80000'/>
+			<FIELD type='1' description='Brightness' value='..' show='0' pos='1.00000,12.20000'/>
+			<FIELD type='1' description='Color' value='red' show='1' pos='-4.50000,0.10000'/>
+			<FIELD type='1' description='Manufacturer' value='..' show='0' pos='1.00000,17.00000'/>
+			<FIELD type='1' description='Manufacturer Part' value='..' show='0' pos='1.00000,19.40000'/>
+			<FIELD type='1' description='Digi-Key Part' value='..' show='0' pos='1.00000,21.80000'/>
+			<FIELD type='1' description='Newark Part' value='..' show='0' pos='1.00000,24.20000'/>
+			<FIELD type='1' description='Mouser Part' value='..' show='0' pos='1.00000,26.60000'/>
+			<FIELD type='1' description='Cost' value='..' show='0' pos='1.00000,29.00000'/>
+		</SYMBOL>
+		<WIRE a='183.32280,104.50314' b='183.31170,104.50314'/>
+		<WIRE a='183.31170,104.50314' b='183.31170,106.26607'/>
+		<SYMBOL id='6' pos='174.32280,109.50314' part='0' rotate='1' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='R?' show='0' pos='1.00000,-13.40000'/>
+			<FIELD type='0' description='Name' value='RE1' show='0' pos='0.50000,-12.30000'/>
+			<FIELD type='3' description='value' value='390' show='1' pos='1.00000,-8.40000'/>
+		</SYMBOL>
+		<SYMBOL id='7' pos='179.51170,119.26607' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='1' description='Ref' value='D?' show='0' pos='1.00000,-4.60000'/>
+			<FIELD type='0' description='Name' value='LED_ind' show='1' pos='-8.50000,-8.00000'/>
+			<FIELD type='1' description='Package' value='LED-T1' show='0' pos='1.00000,-2.20000'/>
+			<FIELD type='1' description='Usage' value='..' show='0' pos='1.00000,0.20000'/>
+			<FIELD type='1' description='Datasheet' value='..' show='0' pos='1.00000,2.60000'/>
+			<FIELD type='1' description='Picture' value='..' show='0' pos='1.00000,5.00000'/>
+			<FIELD type='1' description='Vf' value='..' show='0' pos='1.00000,7.40000'/>
+			<FIELD type='1' description='If' value='..' show='0' pos='1.00000,9.80000'/>
+			<FIELD type='1' description='Brightness' value='..' show='0' pos='1.00000,12.20000'/>
+			<FIELD type='1' description='Color' value='green' show='1' pos='-3.00000,-0.40000'/>
+			<FIELD type='1' description='Manufacturer' value='..' show='0' pos='1.00000,17.00000'/>
+			<FIELD type='1' description='Manufacturer Part' value='..' show='0' pos='1.00000,19.40000'/>
+			<FIELD type='1' description='Digi-Key Part' value='..' show='0' pos='1.00000,21.80000'/>
+			<FIELD type='1' description='Newark Part' value='..' show='0' pos='1.00000,24.20000'/>
+			<FIELD type='1' description='Mouser Part' value='..' show='0' pos='1.00000,26.60000'/>
+			<FIELD type='1' description='Cost' value='..' show='0' pos='1.00000,29.00000'/>
+		</SYMBOL>
+		<WIRE a='173.32280,108.50314' b='173.31170,108.50314'/>
+		<WIRE a='173.31170,108.50314' b='173.31170,110.26607'/>
+		<WIRE a='198.93669,32.41183' b='199.00000,32.41183'/>
+		<WIRE a='183.32280,86.50314' b='170.34646,86.50314'/>
+		<SYMBOL id='8' pos='169.50000,140.50000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='R?' show='0' pos='1.00000,-15.60000'/>
+			<FIELD type='0' description='Name' value='POT1' show='1' pos='-5.00000,-10.50000'/>
+		</SYMBOL>
+		<WIRE a='145.65231,94.57538' b='159.50000,94.57538'/>
+		<WIRE a='159.50000,94.57538' b='159.50000,120.50000'/>
+		<SYMBOL id='4' pos='84.00000,95.50000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='R?' show='0' pos='-17.80000,2.00000'/>
+			<FIELD type='0' description='Name' value='RE1' show='0' pos='-10.30000,3.50000'/>
+			<FIELD type='3' description='value' value='10k' show='1' pos='-9.80000,4.90000'/>
+		</SYMBOL>
+		<SYMBOL id='9' pos='64.00000,101.50000' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='1' description='Ref' value='Q?' show='0' pos='-11.00000,2.00000'/>
+			<FIELD type='0' description='Name' value='NPN' show='1' pos='-13.00000,-11.00000'/>
+			<FIELD type='1' description='Package' value='' show='0' pos='-11.00000,4.40000'/>
+			<FIELD type='1' description='Pmax' value='..' show='0' pos='-11.00000,6.80000'/>
+			<FIELD type='1' description='IcMax' value='..' show='0' pos='-11.00000,9.20000'/>
+			<FIELD type='1' description='VceMax' value='..' show='0' pos='-11.00000,11.60000'/>
+			<FIELD type='1' description='Hfe' value='..' show='0' pos='-11.00000,14.00000'/>
+			<FIELD type='1' description='VceSat' value='..' show='0' pos='-11.00000,16.40000'/>
+			<FIELD type='1' description='VbeSat' value='..' show='0' pos='-11.00000,18.80000'/>
+			<FIELD type='1' description='HfeSat' value='..' show='0' pos='-11.00000,21.20000'/>
+			<FIELD type='1' description='Manufacturer' value='..' show='0' pos='-11.00000,23.60000'/>
+			<FIELD type='1' description='Manufacturer Part' value='..' show='0' pos='-11.00000,26.00000'/>
+			<FIELD type='1' description='Digi-Key Part' value='..' show='0' pos='-11.00000,28.40000'/>
+			<FIELD type='1' description='Newark Part' value='..' show='0' pos='-11.00000,30.80000'/>
+			<FIELD type='1' description='Mouser Part' value='..' show='0' pos='-11.00000,33.20000'/>
+			<FIELD type='1' description='Cost' value='..' show='0' pos='-11.00000,35.60000'/>
+		</SYMBOL>
+		<WIRE a='208.93669,13.00000' b='208.93669,21.41183'/>
+		<LABEL pos='183.00000,21.41183' direction='3' font='4' color='208000' style='0'>5V</LABEL>
+		<SYMBOL id='10' pos='33.00000,56.00000' part='0' rotate='5' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='Z?' show='0' pos='1.00000,-7.60000'/>
+			<FIELD type='0' description='Name' value='PFET_M' show='1' pos='-4.00000,-10.50000'/>
+			<FIELD type='1' description='Package' value='' show='0' pos='1.00000,-5.20000'/>
+			<FIELD type='1' description='None' value='None' show='0' pos='1.00000,-2.80000'/>
+		</SYMBOL>
+		<SYMBOL id='4' pos='57.00000,39.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='R?' show='0' pos='1.00000,-13.40000'/>
+			<FIELD type='0' description='Name' value='RE1' show='0' pos='1.50000,-7.80000'/>
+			<FIELD type='3' description='value' value='10k' show='1' pos='1.00000,-7.40000'/>
+		</SYMBOL>
+		<WIRE a='56.00000,101.50000' b='56.00000,140.50000'/>
+		<WIRE a='199.00000,140.50000' b='246.50000,140.50000'/>
+		<WIRE a='33.00000,48.00000' b='56.00000,48.00000'/>
+		<WIRE a='56.00000,39.00000' b='56.00000,48.00000'/>
+		<SYMBOL id='11' pos='30.00000,89.00000' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='1' description='Ref' value='M?' show='0' pos='-6.00000,2.00000'/>
+			<FIELD type='0' description='Name' value='MOTOR_1PHASE' show='1' pos='-22.00000,-8.50000'/>
+			<FIELD type='1' description='Package' value='' show='0' pos='-6.00000,4.40000'/>
+			<FIELD type='1' description='V_Max' value='..' show='0' pos='-6.00000,6.80000'/>
+			<FIELD type='1' description='I_Max' value='..' show='0' pos='-6.00000,9.20000'/>
+			<FIELD type='1' description='R_Arm' value='..' show='0' pos='-6.00000,11.60000'/>
+			<FIELD type='1' description='L_Arm' value='..' show='0' pos='-6.00000,14.00000'/>
+			<FIELD type='1' description='V_BEMF' value='..' show='0' pos='-6.00000,16.40000'/>
+			<FIELD type='1' description='W_Max' value='..' show='0' pos='-6.00000,18.80000'/>
+			<FIELD type='1' description='T_Max' value='..' show='0' pos='-6.00000,21.20000'/>
+			<FIELD type='1' description='Tau_Mech' value='..' show='0' pos='-6.00000,23.60000'/>
+			<FIELD type='1' description='Tau_Elec' value='..' show='0' pos='-6.00000,26.00000'/>
+			<FIELD type='1' description='Manufacturer' value='..' show='0' pos='-6.00000,28.40000'/>
+			<FIELD type='1' description='Manufacturer Part' value='..' show='0' pos='-6.00000,30.80000'/>
+			<FIELD type='1' description='Digi-Key Part' value='..' show='0' pos='-6.00000,33.20000'/>
+			<FIELD type='1' description='Newark Part' value='..' show='0' pos='-6.00000,35.60000'/>
+			<FIELD type='1' description='Mouser Part' value='..' show='0' pos='-6.00000,38.00000'/>
+			<FIELD type='1' description='Cost' value='..' show='0' pos='-6.00000,40.40000'/>
+		</SYMBOL>
+		<WIRE a='27.00000,56.00000' b='27.00000,76.00000'/>
+		<WIRE a='56.00000,140.50000' b='159.50000,140.50000'/>
+		<WIRE a='84.00000,94.50000' b='105.65231,94.50000'/>
+		<WIRE a='105.65231,94.50000' b='105.65231,94.57538'/>
+		<WIRE a='64.00000,94.50000' b='66.20000,94.50000'/>
+		<JUNCTION pos='159.50000,140.50000'/>
+		<SYMBOL id='12' pos='38.00000,90.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='D?' show='0' pos='1.00000,-9.60000'/>
+			<FIELD type='0' description='Name' value='Dm' show='1' pos='-5.50000,-9.00000'/>
+			<FIELD type='3' description='Other' value='IN4007G' show='1' pos='-7.50000,-2.60000'/>
+		</SYMBOL>
+		<JUNCTION pos='27.00000,76.00000'/>
+		<JUNCTION pos='27.00000,90.00000'/>
+		<WIRE a='27.00000,89.00000' b='27.00000,90.00000'/>
+		<SYMBOL id='13' pos='250.50000,80.00000' part='0' rotate='5' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='B?' show='0' pos='1.00000,-13.60000'/>
+			<FIELD type='0' description='Name' value='Supply' show='1' pos='1.00000,-16.00000'/>
+			<FIELD type='3' description='V' value='8V-16V' show='1' pos='1.00000,-11.20000'/>
+		</SYMBOL>
+		<WIRE a='27.00000,90.00000' b='27.00000,156.50000'/>
+		<WIRE a='27.00000,156.50000' b='246.50000,156.50000'/>
+		<WIRE a='246.50000,140.50000' b='246.50000,79.80000'/>
+		<JUNCTION pos='246.50000,140.50000'/>
+		<WIRE a='246.50000,156.50000' b='246.50000,140.50000'/>
+		<POWER pos='246.50000,156.50000' which='4' direction='1'></POWER>
+		<JUNCTION pos='246.50000,156.50000'/>
+		<SYMBOL id='14' pos='44.50000,87.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='1' description='Ref' value='C?' show='0' pos='1.00000,-3.60000'/>
+			<FIELD type='0' description='Name' value='Cm' show='1' pos='-1.50000,-5.50000'/>
+			<FIELD type='1' description='Package' value='' show='0' pos='1.00000,-1.20000'/>
+			<FIELD type='1' description='Value' value='100nF' show='1' pos='-4.00000,0.20000'/>
+			<FIELD type='1' description='Tol.' value='..' show='0' pos='1.00000,3.60000'/>
+			<FIELD type='1' description='V_Max' value='..' show='0' pos='1.00000,6.00000'/>
+			<FIELD type='1' description='ESR' value='..' show='0' pos='1.00000,8.40000'/>
+			<FIELD type='1' description='Material' value='..' show='0' pos='1.00000,10.80000'/>
+			<FIELD type='1' description='Manufacturer' value='..' show='0' pos='1.00000,13.20000'/>
+			<FIELD type='1' description='Manufacturer Part' value='..' show='0' pos='1.00000,15.60000'/>
+			<FIELD type='1' description='Digi-Key Part' value='..' show='0' pos='1.00000,18.00000'/>
+			<FIELD type='1' description='Newark Part' value='..' show='0' pos='1.00000,20.40000'/>
+			<FIELD type='1' description='Mouser Part' value='..' show='0' pos='1.00000,22.80000'/>
+			<FIELD type='1' description='Cost' value='..' show='0' pos='1.00000,25.20000'/>
+		</SYMBOL>
+		<WIRE a='42.50000,79.00000' b='42.50000,76.00000'/>
+		<WIRE a='36.00000,76.00000' b='27.00000,76.00000'/>
+		<JUNCTION pos='36.00000,76.00000'/>
+		<WIRE a='42.50000,87.00000' b='42.50000,90.00000'/>
+		<WIRE a='36.00000,90.00000' b='27.00000,90.00000'/>
+		<JUNCTION pos='36.00000,90.00000'/>
+		<WIRE a='42.50000,90.00000' b='36.00000,90.00000'/>
+		<SYMBOL id='15' pos='230.50000,15.00000' part='0' rotate='3' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='1' description='Ref' value='D?' show='0' pos='-9.00000,2.00000'/>
+			<FIELD type='0' description='Name' value='Din' show='1' pos='-6.50000,-4.50000'/>
+			<FIELD type='1' description='Package' value='' show='0' pos='-9.00000,4.40000'/>
+			<FIELD type='1' description='Pmax' value='..' show='0' pos='-9.00000,6.80000'/>
+			<FIELD type='1' description='IfMax' value='..' show='0' pos='-9.00000,9.20000'/>
+			<FIELD type='1' description='VrMax' value='..' show='0' pos='-9.00000,11.60000'/>
+			<FIELD type='1' description='VfMax' value='..' show='0' pos='-9.00000,14.00000'/>
+			<FIELD type='1' description='Vf' value='..' show='0' pos='-9.00000,16.40000'/>
+			<FIELD type='1' description='Manufacturer' value='..' show='0' pos='-9.00000,18.80000'/>
+			<FIELD type='1' description='Manufacturer Part' value='IN4007G' show='1' pos='-7.50000,3.70000'/>
+			<FIELD type='1' description='Digi-Key Part' value='..' show='0' pos='-9.00000,23.60000'/>
+			<FIELD type='1' description='Newark Part' value='..' show='0' pos='-9.00000,26.00000'/>
+			<FIELD type='1' description='Mouser Part' value='..' show='0' pos='-9.00000,28.40000'/>
+			<FIELD type='1' description='Cost' value='..' show='0' pos='-9.00000,30.80000'/>
+		</SYMBOL>
+		<WIRE a='221.50000,13.00000' b='208.93669,13.00000'/>
+		<WIRE a='246.50000,13.00000' b='230.50000,13.00000'/>
+		<SYMBOL id='4' pos='48.00000,114.50000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='R?' show='0' pos='1.00000,-13.40000'/>
+			<FIELD type='0' description='Name' value='RE1' show='0' pos='1.50000,-7.80000'/>
+			<FIELD type='3' description='value' value='10k' show='1' pos='0.50000,-8.40000'/>
+		</SYMBOL>
+		<SYMBOL id='16' pos='48.00000,136.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='R?' show='0' pos='1.00000,-13.40000'/>
+			<FIELD type='0' description='Name' value='RE1' show='0' pos='0.00000,-7.30000'/>
+			<FIELD type='3' description='value' value='2k2' show='1' pos='0.50000,-2.40000'/>
+		</SYMBOL>
+		<WIRE a='42.50000,76.00000' b='36.00000,76.00000'/>
+		<JUNCTION pos='42.50000,76.00000'/>
+		<SYMBOL id='17' pos='213.00000,39.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='C?' show='0' pos='1.00000,-9.60000'/>
+			<FIELD type='0' description='Name' value='Cin' show='1' pos='-2.00000,-9.00000'/>
+			<FIELD type='3' description='value' value='22uF' show='1' pos='-2.00000,-2.60000'/>
+		</SYMBOL>
+		<JUNCTION pos='208.93669,21.41183'/>
+		<WIRE a='208.93669,21.41183' b='209.00000,21.41183'/>
+		<WIRE a='209.00000,21.41183' b='209.00000,25.00000'/>
+		<WIRE a='209.00000,39.00000' b='199.00000,39.00000'/>
+		<WIRE a='199.00000,32.41183' b='199.00000,39.00000'/>
+		<SYMBOL id='18' pos='192.00000,39.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='C?' show='0' pos='1.00000,-9.60000'/>
+			<FIELD type='0' description='Name' value='Cout' show='1' pos='-9.00000,-9.50000'/>
+			<FIELD type='3' description='value' value='22uF' show='1' pos='-9.50000,-3.10000'/>
+		</SYMBOL>
+		<WIRE a='188.00000,39.00000' b='199.00000,39.00000'/>
+		<WIRE a='188.00000,25.00000' b='188.00000,21.50000'/>
+		<WIRE a='188.93669,21.41183' b='188.00000,21.50000'/>
+		<JUNCTION pos='199.00000,39.00000'/>
+		<WIRE a='194.31170,104.26607' b='194.32280,104.26607'/>
+		<WIRE a='194.32280,104.26607' b='194.32280,100.30314'/>
+		<WIRE a='166.50000,82.57538' b='187.82280,82.57538'/>
+		<WIRE a='187.82280,82.57538' b='194.32280,82.50314'/>
+		<JUNCTION pos='199.00000,39.00000'/>
+		<WIRE a='199.00000,119.50000' b='199.00000,140.50000'/>
+		<JUNCTION pos='199.00000,140.50000'/>
+		<WIRE a='159.50000,140.50000' b='199.00000,140.50000'/>
+		<WIRE a='126.58048,59.48489' b='166.50000,59.48489'/>
+		<WIRE a='166.50000,59.48489' b='166.50000,82.57538'/>
+		<WIRE a='145.65231,82.57538' b='166.50000,82.57538'/>
+		<WIRE a='173.31170,119.26607' b='199.00000,119.26607'/>
+		<JUNCTION pos='199.00000,119.26607'/>
+		<WIRE a='199.00000,115.50000' b='199.00000,119.26607'/>
+		<WIRE a='199.00000,119.26607' b='199.00000,119.50000'/>
+		<JUNCTION pos='199.00000,119.50000'/>
+		<WIRE a='199.00000,119.26607' b='199.00000,119.50000'/>
+		<WIRE a='183.31170,115.26607' b='199.00000,115.26607'/>
+		<JUNCTION pos='199.00000,115.26607'/>
+		<WIRE a='199.00000,113.50000' b='199.00000,115.26607'/>
+		<WIRE a='199.00000,115.26607' b='199.00000,115.50000'/>
+		<JUNCTION pos='199.00000,115.50000'/>
+		<WIRE a='199.00000,115.26607' b='199.00000,115.50000'/>
+		<WIRE a='194.31170,113.26607' b='199.00000,113.26607'/>
+		<JUNCTION pos='199.00000,113.26607'/>
+		<WIRE a='199.00000,78.57538' b='199.00000,113.26607'/>
+		<WIRE a='199.00000,113.26607' b='199.00000,113.50000'/>
+		<JUNCTION pos='199.00000,113.50000'/>
+		<WIRE a='199.00000,113.26607' b='199.00000,113.50000'/>
+		<WIRE a='122.60000,53.08000' b='122.50000,53.08000'/>
+		<WIRE a='122.50000,53.08000' b='122.50000,62.50000'/>
+		<WIRE a='122.50000,62.50000' b='105.72388,62.50000'/>
+		<WIRE a='105.72388,68.00000' b='105.72388,78.71828'/>
+		<JUNCTION pos='105.72388,78.71828'/>
+		<WIRE a='124.60000,53.08000' b='124.50000,53.08000'/>
+		<WIRE a='124.50000,53.08000' b='124.50000,62.50000'/>
+		<WIRE a='124.50000,62.50000' b='145.65231,62.50000'/>
+		<WIRE a='145.65231,68.00000' b='145.65231,78.57538'/>
+		<SYMBOL id='19' pos='130.50000,72.00000' part='0' rotate='3' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='C?' show='0' pos='-14.00000,2.00000'/>
+			<FIELD type='0' description='Name' value='Cpic' show='1' pos='-13.00000,-4.50000'/>
+			<FIELD type='3' description='value' value='220uF' show='1' pos='-5.50000,-4.60000'/>
+		</SYMBOL>
+		<WIRE a='116.50000,68.00000' b='105.72388,68.00000'/>
+		<JUNCTION pos='105.72388,68.00000'/>
+		<WIRE a='105.72388,62.50000' b='105.72388,68.00000'/>
+		<WIRE a='130.50000,68.00000' b='145.65231,68.00000'/>
+		<JUNCTION pos='145.65231,68.00000'/>
+		<WIRE a='145.65231,62.50000' b='145.65231,68.00000'/>
+		<JUNCTION pos='145.65231,78.57538'/>
+		<WIRE a='145.65231,78.57538' b='199.00000,78.57538'/>
+		<JUNCTION pos='199.00000,78.57538'/>
+		<WIRE a='199.00000,78.50000' b='199.00000,78.57538'/>
+		<WIRE a='199.00000,78.57538' b='199.00000,78.50000'/>
+		<JUNCTION pos='199.00000,78.50000'/>
+		<WIRE a='199.00000,44.00000' b='199.00000,78.50000'/>
+		<SYMBOL id='4' pos='71.50000,42.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='R?' show='0' pos='1.00000,-13.40000'/>
+			<FIELD type='0' description='Name' value='RE1' show='0' pos='1.50000,-7.80000'/>
+			<FIELD type='3' description='value' value='10k' show='1' pos='1.00000,-7.40000'/>
+		</SYMBOL>
+		<SYMBOL id='20' pos='76.50000,68.50000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='1' description='Ref' value='SW?' show='0' pos='-7.00000,2.00000'/>
+			<FIELD type='0' description='Name' value='B' show='1' pos='-9.50000,-9.00000'/>
+			<FIELD type='1' description='Package' value='' show='0' pos='-7.00000,4.40000'/>
+			<FIELD type='1' description='V_Max' value='..' show='0' pos='-7.00000,6.80000'/>
+			<FIELD type='1' description='I_Max' value='..' show='0' pos='-7.00000,9.20000'/>
+			<FIELD type='1' description='R_Max' value='..' show='0' pos='-7.00000,11.60000'/>
+			<FIELD type='1' description='V_Max_AC' value='..' show='0' pos='-7.00000,14.00000'/>
+			<FIELD type='1' description='I_Max_AC' value='..' show='0' pos='-7.00000,16.40000'/>
+			<FIELD type='1' description='Manufacturer' value='..' show='0' pos='-7.00000,18.80000'/>
+			<FIELD type='1' description='Manufacturer Part' value='..' show='0' pos='-7.00000,21.20000'/>
+			<FIELD type='1' description='Digi-Key Part' value='..' show='0' pos='-7.00000,23.60000'/>
+			<FIELD type='1' description='Newark Part' value='..' show='0' pos='-7.00000,26.00000'/>
+			<FIELD type='1' description='Mouser Part' value='..' show='0' pos='-7.00000,28.40000'/>
+			<FIELD type='1' description='Cost' value='..' show='0' pos='-7.00000,30.80000'/>
+		</SYMBOL>
+		<JUNCTION pos='89.50000,90.57538'/>
+		<WIRE a='82.50000,90.57538' b='75.50000,90.57538'/>
+		<JUNCTION pos='89.10000,90.57538'/>
+		<WIRE a='89.50000,90.57538' b='89.10000,90.57538'/>
+		<WIRE a='89.10000,90.57538' b='89.50000,90.57538'/>
+		<WIRE a='75.50000,90.57538' b='75.50000,68.50000'/>
+		<JUNCTION pos='94.47515,21.41183'/>
+		<WIRE a='169.50000,21.41183' b='94.47515,21.41183'/>
+		<WIRE a='70.50000,48.50000' b='70.50000,42.00000'/>
+		<WIRE a='75.50000,48.50000' b='75.50000,44.00000'/>
+		<WIRE a='82.50000,44.00000' b='199.00000,44.00000'/>
+		<JUNCTION pos='199.00000,44.00000'/>
+		<WIRE a='199.00000,39.00000' b='199.00000,44.00000'/>
+		<WIRE a='70.50000,24.20000' b='70.50000,21.41183'/>
+		<WIRE a='70.50000,21.41183' b='94.47515,21.41183'/>
+		<SYMBOL id='21' pos='86.50000,75.50000' part='0' rotate='5' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='C?' show='0' pos='1.00000,-9.60000'/>
+			<FIELD type='0' description='Name' value='C_button' show='1' pos='-7.50000,-8.50000'/>
+			<FIELD type='3' description='value' value='100nF' show='1' pos='-7.50000,-2.60000'/>
+		</SYMBOL>
+		<WIRE a='82.50000,61.50000' b='82.50000,44.00000'/>
+		<JUNCTION pos='82.50000,44.00000'/>
+		<WIRE a='75.50000,44.00000' b='82.50000,44.00000'/>
+		<WIRE a='82.50000,75.50000' b='82.50000,90.57538'/>
+		<JUNCTION pos='82.50000,90.57538'/>
+		<WIRE a='89.10000,90.57538' b='82.50000,90.57538'/>
+		<WIRE a='145.65231,90.57538' b='173.32280,90.57538'/>
+		<WIRE a='173.32280,90.57538' b='173.32280,91.50314'/>
+		<WIRE a='169.50000,130.50000' b='169.50000,21.41183'/>
+		<JUNCTION pos='169.50000,21.41183'/>
+		<JUNCTION pos='169.50000,21.41183'/>
+		<WIRE a='188.00000,21.50000' b='169.50000,21.41183'/>
+		<JUNCTION pos='166.50000,82.57538'/>
+		<WIRE a='128.60000,53.08000' b='183.32280,53.08000'/>
+		<WIRE a='183.32280,53.08000' b='183.32280,86.50314'/>
+		<JUNCTION pos='183.32280,86.50314'/>
+		<JUNCTION pos='188.00000,21.50000'/>
+		<SYMBOL id='22' pos='48.00000,156.50000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='R?' show='0' pos='1.00000,-13.40000'/>
+			<FIELD type='0' description='Name' value='RE1' show='0' pos='0.00000,-7.30000'/>
+			<FIELD type='3' description='value' value='2k2' show='1' pos='0.50000,-6.90000'/>
+		</SYMBOL>
+		<JUNCTION pos='47.00000,156.50000'/>
+		<WIRE a='47.00000,138.70000' b='47.00000,136.00000'/>
+		<WIRE a='42.50000,76.00000' b='47.00000,76.00000'/>
+		<WIRE a='47.00000,76.00000' b='47.00000,96.70000'/>
+		<WIRE a='47.00000,116.00000' b='47.00000,118.20000'/>
+		<WIRE a='145.65231,98.57538' b='155.00000,98.57538'/>
+		<WIRE a='155.00000,98.57538' b='155.00000,116.00000'/>
+		<WIRE a='155.00000,116.00000' b='47.00000,116.00000'/>
+		<JUNCTION pos='47.00000,116.00000'/>
+		<WIRE a='47.00000,114.50000' b='47.00000,116.00000'/>
+		<LABEL pos='71.00000,116.00000' direction='3' font='4' color='208000' style='0'>0V-5V</LABEL>
+		<SYMBOL id='4' pos='57.00000,78.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='R?' show='0' pos='1.00000,-13.40000'/>
+			<FIELD type='0' description='Name' value='RE1' show='0' pos='1.50000,-7.80000'/>
+			<FIELD type='3' description='value' value='10k' show='1' pos='1.50000,-7.90000'/>
+		</SYMBOL>
+		<WIRE a='56.00000,48.00000' b='56.00000,60.20000'/>
+		<WIRE a='56.00000,78.00000' b='56.00000,87.50000'/>
+		<LABEL pos='40.50000,48.00000' direction='3' font='4' color='208000' style='0'>6V nominal</LABEL>
+		<JUNCTION pos='56.00000,48.00000'/>
+		<WIRE a='246.50000,13.00000' b='246.50000,62.00000'/>
+		<JUNCTION pos='246.50000,13.00000'/>
+		<WIRE a='246.50000,13.00000' b='246.50000,4.50000'/>
+		<WIRE a='56.00000,4.50000' b='56.00000,21.20000'/>
+		<WIRE a='27.00000,44.00000' b='27.00000,4.50000'/>
+		<WIRE a='56.00000,4.50000' b='246.50000,4.50000'/>
+		<JUNCTION pos='56.00000,4.50000'/>
+		<WIRE a='27.00000,4.50000' b='56.00000,4.50000'/>
+	</TinyCAD>
+</TinyCADSheets>

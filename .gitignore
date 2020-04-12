@@ -6,7 +6,11 @@ MotorController.X/disassembly/
 MotorController.X/dist/
 MotorController.X/nbproject/private/
 MotorController.X/nbproject/Package-*.bash
+MotorController.X/nbproject/configurations.xml
 MotorController.X/nbproject/Makefile-*
 util/~*
+
+hardware/render/*
+hardware/*.autosave
 
 git.bat

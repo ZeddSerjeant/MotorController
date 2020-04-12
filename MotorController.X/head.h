@@ -1,78 +1,29 @@
-/* Microchip Technology Inc. and its subsidiaries.  You may use this software 
- * and any derivatives exclusively with Microchip products. 
- * 
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS".  NO WARRANTIES, WHETHER 
- * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
- * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A 
- * PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION 
- * WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION. 
- *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
- * INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
- * WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
- * BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE.  TO THE 
- * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS 
- * IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF 
- * ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *
- * MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE 
- * TERMS. 
- */
+#include <xc.h> // include processor files - each processor file is guarded. 
 
-/* 
- * File:   
- * Author: 
- * Comments:
- * Revision history: 
- */
+enum FLAGS {OFF=0, OUTPUT=0, INTERNAL=0, CLEAR=0, DIGITAL=0, ANALOG=1, INPUT=1, ON=1};
+#define GLOBAL_INTERRUPTS GIE
 
-// This is a guard condition so that contents of this file are not included
-// more than once.  
-#ifndef XC_HEADER_TEMPLATE_H
-#define	XC_HEADER_TEMPLATE_H
+//Pins
 
-#include <xc.h> // include processor files - each processor file is guarded.  
+#define DAT_LED RA0
+#define DAT_LED_PIN TRISA0 
+#define DAT_LED_TYPE ANS0
+#define DAT_LED_BIT 0b000001
 
-// TODO Insert appropriate #include <>
+#define CLK_LED RA1
+#define CLK_LED_PIN TRISA1
+#define CLK_LED_TYPE ANS1
+#define CLK_LED_BIT 0b000010
 
-// TODO Insert C++ class definitions if appropriate
+#define IND_LED RA2
+#define IND_LED_PIN TRISA2 
+#define IND_LED_TYPE ANS2
+#define IND_LED_BIT 0b000100
 
-// TODO Insert declarations
-
-// Comment a function and leverage automatic documentation with slash star star
-/**
-    <p><b>Function prototype:</b></p>
-  
-    <p><b>Summary:</b></p>
-
-    <p><b>Description:</b></p>
-
-    <p><b>Precondition:</b></p>
-
-    <p><b>Parameters:</b></p>
-
-    <p><b>Returns:</b></p>
-
-    <p><b>Example:</b></p>
-    <code>
- 
-    </code>
-
-    <p><b>Remarks:</b></p>
- */
-// TODO Insert declarations or function prototypes (right here) to leverage 
-// live documentation
-
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
-    // TODO If C++ is being used, regular C code needs function names to have C 
-    // linkage so the functions can be used by the c code. 
-
-#ifdef	__cplusplus
-}
-#endif /* __cplusplus */
-
-#endif	/* XC_HEADER_TEMPLATE_H */
+//TIMER0
+#define PRESCALER PSA
+#define TIMER0_COUNTER TMR0
+#define TIMER0_CLOCK_SCOURCE T0CS
+#define TIMER0_INTERRUPT T0IE
+#define TIMER0_INTERRUPT_FLAG TMR0IF
 
