@@ -25,9 +25,12 @@ unsigned char speed = 50; // 0->100, represents a percentage of max speed
 unsigned char in_voltage = 80; // deciVolts, the voltage on the Motor
 unsigned short int max_voltage = 466; // 7.6V max voltage the motor is allowed to run at (95% of 8V)
 unsigned short int min_voltage = 147; // 2.4V min voltage
-#define COUNTDOWN_TIME (unsigned char)20; // [ms] represents the amount of time to check the voltage of the motor. 
+#define COUNTDOWN_TIME (unsigned char)10; // [ms] represents the amount of time to check the voltage of the motor. 
 unsigned char countdown = COUNTDOWN_TIME;
 __bit make_measurement = 0; // indicates whether a measurement needs to be taken
+
+//control variables
+
 
 volatile union
 {
@@ -147,7 +150,7 @@ void main() {
     PWM_MOTOR = OFF;
     TIMER2_CONTROL = (ON<<TIMER2_ON) | (PRESCALE_1<<TIMER_CLOCK_PRESCALE); // Timer 2 register
     PWM_PERIOD = 199; // 5kHz
-    pwm_duty_cycle = calcPWM(PWM_PERIOD, 50);
+    pwm_duty_cycle = calcPWM(PWM_PERIOD, 0);
     PWM_CONTROL = (SINGLE_OUTPUT<<PWM_MODE) | (ACTIVE_HIGH_ACTIVE_HIGH<<PWM_OUTPUT) | ((pwm_duty_cycle & 0b11)<<PWM_DUTYCYCLE_LSB); //PWM register set
     PWM_DUTYCYCLE_MSB = (unsigned char)(pwm_duty_cycle>>2);
     
@@ -206,7 +209,15 @@ void main() {
 
             if (((unsigned long int)sample.reading1*100)/max_voltage < speed)
             {
-                pwm_duty_cycle += 10;
+                if (pwm_duty_cycle>(0x3FF-10)) // if we can't safely add
+                {
+                    pwm_duty_cycle = 0x3FF; //be max
+                }
+                else
+                {
+                    pwm_duty_cycle += 10;
+                }
+                
             }
             else
             {
