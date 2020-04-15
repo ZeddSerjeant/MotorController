@@ -19,6 +19,9 @@
 unsigned short int led_duty_cycle = 0; // Duty cycle of LED as on_time[ms]
 unsigned short int led_duty_cycle_counter = 0;
 
+unsigned short int pwm_duty_cycle = 100; //[ms]
+// unsigned short int pwm_period = 500;
+
 volatile union
 {
     unsigned char byte;
@@ -60,17 +63,21 @@ void __interrupt() ISR()
             else
             {
                 PORTA_SH.IND_LED = OFF;
+                // PWM_MOTOR = OFF;
             }
         }
         else
         {
             PORTA_SH.IND_LED = ON; // within On part of duty cycle
+            // PWM_MOTOR = ON;
         }
+
         
         // IND_LED = IND_led_state;
         // LED = led_test_state; //TTT
         // IND_LED = ON;
     }
+
 }
 
 void main() {
@@ -84,8 +91,24 @@ void main() {
     IND_LED_TYPE = DIGITAL;
     IND_LED_PIN = OUTPUT;
 
-    PORTA_SH.DAT_LED = ON;
-    PORTA_SH.CLK_LED = ON;
+
+    // PORTA_SH.DAT_LED = ON;
+    // PORTA_SH.CLK_LED = ON;
+    PORTA_SH.byte = 0;
+
+    //setup PWM
+    PWM_MOTOR_PIN = OUTPUT;
+    PWM_MOTOR = OFF;
+    TIMER2_CONTROL = (ON<<TIMER2_ON) | (PRESCALE_16<<TIMER_CLOCK_PRESCALE); // Timer 2 register
+    // TIMER2_CONTROL = 0b00000101;
+    PWM_CONTROL = (SINGLE_OUTPUT<<PWM_MODE) | (ACTIVE_HIGH_ACTIVE_HIGH<<PWM_OUTPUT) | ((pwm_duty_cycle & 0b11)<<PWM_DUTYCYCLE_LSB); //PWM register set
+    // PWM_CONTROL = 0b00001100;
+    // (unsigned char)(pwm_duty_cycle & 0b11)
+    PWM_DUTYCYCLE_MSB = (unsigned char)(pwm_duty_cycle>>2);
+    // PWM_DUTYCYCLE_MSB = 62;
+    PWM_PERIOD = 96; //500Hz
+    // PWM_OUTPUT = ACTIVE_HIGH_ACTIVE_HIGH; // turns the PWM on with this output pattern
+    
 
     // Set up timer0
     // calculate intial for accurate timing $ inital = TimerMax-((Delay*Fosc)/(Prescaler*4))
@@ -96,14 +119,19 @@ void main() {
     TIMER0_INTERRUPT = ON; // enable timer0 interrupts
 
     //setup flashing led
-    led_duty_cycle = 250; //[ms]
+    led_duty_cycle = 185; //[ms]
 
     //turn on interrupts
     GLOBAL_INTERRUPTS = ON;
 
     while (1)
     {
-        PORTA = PORTA_SH.byte;
+        if (ECCPASE)
+        {
+            PORTA_SH.DAT_LED = ON;
+        }
+
+        PORTA = PORTA_SH.byte; //write out IO register to avoid read-modify-write errors
     }
 
     return;

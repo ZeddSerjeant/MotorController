@@ -1795,12 +1795,11 @@ download the executable.-->
 		<WIRE a='173.31170,108.50314' b='173.31170,110.26607'/>
 		<WIRE a='198.93669,32.41183' b='199.00000,32.41183'/>
 		<WIRE a='183.32280,86.50314' b='170.34646,86.50314'/>
-		<SYMBOL id='8' pos='169.50000,140.50000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='8' pos='170.50000,137.00000' part='0' rotate='4' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='R?' show='0' pos='1.00000,-15.60000'/>
-			<FIELD type='0' description='Name' value='POT1' show='1' pos='-5.00000,-10.50000'/>
+			<FIELD type='0' description='Name' value='POT1' show='1' pos='2.00000,-9.50000'/>
 		</SYMBOL>
 		<WIRE a='145.65231,94.57538' b='159.50000,94.57538'/>
-		<WIRE a='159.50000,94.57538' b='159.50000,120.50000'/>
 		<SYMBOL id='4' pos='84.00000,95.50000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='R?' show='0' pos='-17.80000,2.00000'/>
 			<FIELD type='0' description='Name' value='RE1' show='0' pos='-10.30000,3.50000'/>
@@ -1808,7 +1807,7 @@ download the executable.-->
 		</SYMBOL>
 		<SYMBOL id='9' pos='64.00000,101.50000' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='1' description='Ref' value='Q?' show='0' pos='-11.00000,2.00000'/>
-			<FIELD type='0' description='Name' value='NPN' show='1' pos='-13.00000,-11.00000'/>
+			<FIELD type='0' description='Name' value='NPN_M' show='1' pos='-6.50000,-10.50000'/>
 			<FIELD type='1' description='Package' value='' show='0' pos='-11.00000,4.40000'/>
 			<FIELD type='1' description='Pmax' value='..' show='0' pos='-11.00000,6.80000'/>
 			<FIELD type='1' description='IcMax' value='..' show='0' pos='-11.00000,9.20000'/>
@@ -1818,7 +1817,7 @@ download the executable.-->
 			<FIELD type='1' description='VbeSat' value='..' show='0' pos='-11.00000,18.80000'/>
 			<FIELD type='1' description='HfeSat' value='..' show='0' pos='-11.00000,21.20000'/>
 			<FIELD type='1' description='Manufacturer' value='..' show='0' pos='-11.00000,23.60000'/>
-			<FIELD type='1' description='Manufacturer Part' value='..' show='0' pos='-11.00000,26.00000'/>
+			<FIELD type='1' description='Manufacturer Part' value='BC547' show='1' pos='-5.00000,-0.50000'/>
 			<FIELD type='1' description='Digi-Key Part' value='..' show='0' pos='-11.00000,28.40000'/>
 			<FIELD type='1' description='Newark Part' value='..' show='0' pos='-11.00000,30.80000'/>
 			<FIELD type='1' description='Mouser Part' value='..' show='0' pos='-11.00000,33.20000'/>
@@ -1830,7 +1829,7 @@ download the executable.-->
 			<FIELD type='0' description='Ref' value='Z?' show='0' pos='1.00000,-7.60000'/>
 			<FIELD type='0' description='Name' value='PFET_M' show='1' pos='-4.00000,-10.50000'/>
 			<FIELD type='1' description='Package' value='' show='0' pos='1.00000,-5.20000'/>
-			<FIELD type='1' description='None' value='None' show='0' pos='1.00000,-2.80000'/>
+			<FIELD type='1' description='None' value='IRF9Z24N' show='0' pos='1.00000,-2.80000'/>
 		</SYMBOL>
 		<SYMBOL id='4' pos='57.00000,39.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='R?' show='0' pos='1.00000,-13.40000'/>
@@ -1862,11 +1861,10 @@ download the executable.-->
 			<FIELD type='1' description='Cost' value='..' show='0' pos='-6.00000,40.40000'/>
 		</SYMBOL>
 		<WIRE a='27.00000,56.00000' b='27.00000,76.00000'/>
-		<WIRE a='56.00000,140.50000' b='159.50000,140.50000'/>
+		<WIRE a='168.50000,140.50000' b='199.00000,140.50000'/>
 		<WIRE a='84.00000,94.50000' b='105.65231,94.50000'/>
 		<WIRE a='105.65231,94.50000' b='105.65231,94.57538'/>
 		<WIRE a='64.00000,94.50000' b='66.20000,94.50000'/>
-		<JUNCTION pos='159.50000,140.50000'/>
 		<SYMBOL id='12' pos='38.00000,90.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='D?' show='0' pos='1.00000,-9.60000'/>
 			<FIELD type='0' description='Name' value='Dm' show='1' pos='-5.50000,-9.00000'/>
@@ -1966,7 +1964,6 @@ download the executable.-->
 		<JUNCTION pos='199.00000,39.00000'/>
 		<WIRE a='199.00000,119.50000' b='199.00000,140.50000'/>
 		<JUNCTION pos='199.00000,140.50000'/>
-		<WIRE a='159.50000,140.50000' b='199.00000,140.50000'/>
 		<WIRE a='126.58048,59.48489' b='166.50000,59.48489'/>
 		<WIRE a='166.50000,59.48489' b='166.50000,82.57538'/>
 		<WIRE a='145.65231,82.57538' b='166.50000,82.57538'/>
@@ -2043,7 +2040,7 @@ download the executable.-->
 		<WIRE a='89.10000,90.57538' b='89.50000,90.57538'/>
 		<WIRE a='75.50000,90.57538' b='75.50000,68.50000'/>
 		<JUNCTION pos='94.47515,21.41183'/>
-		<WIRE a='169.50000,21.41183' b='94.47515,21.41183'/>
+		<WIRE a='168.50000,21.41183' b='94.47515,21.41183'/>
 		<WIRE a='70.50000,48.50000' b='70.50000,42.00000'/>
 		<WIRE a='75.50000,48.50000' b='75.50000,44.00000'/>
 		<WIRE a='82.50000,44.00000' b='199.00000,44.00000'/>
@@ -2064,9 +2061,6 @@ download the executable.-->
 		<WIRE a='89.10000,90.57538' b='82.50000,90.57538'/>
 		<WIRE a='145.65231,90.57538' b='173.32280,90.57538'/>
 		<WIRE a='173.32280,90.57538' b='173.32280,91.50314'/>
-		<WIRE a='169.50000,130.50000' b='169.50000,21.41183'/>
-		<JUNCTION pos='169.50000,21.41183'/>
-		<JUNCTION pos='169.50000,21.41183'/>
 		<WIRE a='188.00000,21.50000' b='169.50000,21.41183'/>
 		<JUNCTION pos='166.50000,82.57538'/>
 		<WIRE a='128.60000,53.08000' b='183.32280,53.08000'/>
@@ -2106,5 +2100,15 @@ download the executable.-->
 		<WIRE a='56.00000,4.50000' b='246.50000,4.50000'/>
 		<JUNCTION pos='56.00000,4.50000'/>
 		<WIRE a='27.00000,4.50000' b='56.00000,4.50000'/>
+		<WIRE a='168.50000,137.00000' b='168.50000,140.50000'/>
+		<JUNCTION pos='168.50000,140.50000'/>
+		<WIRE a='56.00000,140.50000' b='168.50000,140.50000'/>
+		<WIRE a='168.50000,117.00000' b='168.50000,21.41183'/>
+		<JUNCTION pos='168.50000,21.41183'/>
+		<WIRE a='169.50000,21.41183' b='168.50000,21.41183'/>
+		<WIRE a='159.50000,94.57538' b='159.50000,123.00000'/>
+		<WIRE a='159.50000,123.00000' b='154.50000,123.00000'/>
+		<WIRE a='154.50000,123.00000' b='154.50000,127.00000'/>
+		<WIRE a='154.50000,127.00000' b='158.50000,127.00000'/>
 	</TinyCAD>
 </TinyCADSheets>
