@@ -34,6 +34,14 @@ enum FLAGS {OFF=0, OUTPUT=0, INTERNAL=0, CLEAR=0, DIGITAL=0, ANALOG=1, INPUT=1, 
 #define TIMER0_INTERRUPT T0IE
 #define TIMER0_INTERRUPT_FLAG TMR0IF
 
+//timer 1
+#define TIMER1_H TMR1H
+#define TIMER1_L TMR1L
+#define TIMER1_INTERRUPT_FLAG TMR1IF
+#define TIMER1_INTERRUPT TMR1IE
+#define TIMER1 TMR1ON
+
+
 //PWM
 //parts are specified as an offset within a register
 #define PWM_CONTROL CCP1CON
@@ -56,10 +64,14 @@ enum FLAGS {OFF=0, OUTPUT=0, INTERNAL=0, CLEAR=0, DIGITAL=0, ANALOG=1, INPUT=1, 
 #define PRESCALE_1 (unsigned char)0b00
 #define PRESCALE_4 (unsigned char)0b01
 #define PRESCALE_16 (unsigned char)0b10
+
+#define PERIPHAL_INTERRUPT PEIE
+#define TIMER2_INTERRUPT TMR2IE
  
 // #define TIMER2_PRESCALER T2CKPS
 
 #define ACTIVE_HIGH_ACTIVE_HIGH (unsigned char)0b1100
+#define ACTIVE_LOW_ACTIVE_LOW (unsigned char)0b1111
 #define SINGLE_OUTPUT (unsigned char)0b00
 
 //ADC
@@ -77,3 +89,4 @@ enum FLAGS {OFF=0, OUTPUT=0, INTERNAL=0, CLEAR=0, DIGITAL=0, ANALOG=1, INPUT=1, 
 #define ADC_INTERRUPT ADIE
 #define ADC_INTERRUPT_FLAG ADIF
 #define ADC_ON ADON
+#define ADC_PAUSE asm("NOP;");asm("NOP;");asm("NOP;");asm("NOP;");asm("NOP;");asm("NOP;");asm("NOP;")
