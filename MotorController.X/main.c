@@ -424,23 +424,20 @@ void main() {
             GLOBAL_INTERRUPTS = ON;
             measure_motor = 0;
 
+            // speed = 250;
             
             error = (signed long int)speed - medianValue(sample.readings);
-            error = (error*proportion_constant)/100;
+            // error = (error*proportion_constant)/100;
 
-            ratio = speed+error;
+           ratio = (((signed long int)speed*22)+(error*proportion_constant))/in_voltage;
 
             if (ratio <= 0) // error magnitude too large
             {
-                ratio = speed;
+                ratio = 0;
             }
-            // else if (ratio > in_voltage)
-            // {
-            //     ratio = 100;
-            // }
-            else
+            else if (ratio > 100)
             {
-                ratio = ((ratio)*22)/in_voltage;
+                ratio = 100;
             }
 
             
@@ -489,6 +486,7 @@ void main() {
         //read pot for P gain
 
         proportion_set_mode = 0;
+        
 
         ADC_CHANNEL2 = 1; ADC_CHANNEL1 = 0; ADC_CHANNEL0 = 0; // Set the channel to AN4 (where the POT is)
         ADC_PAUSE; // wait for small amount of time for the channels to redirect
@@ -505,11 +503,14 @@ void main() {
 
         if (proportion_set_mode)
         {
+            speed_delta = 0;
+            speed = 150;
+
             proportion_constant = (unsigned char)(((unsigned long int)sample.reading1*195)/1000);
         }
         else
         {
-            proportion_constant = 28;
+            proportion_constant = 52;//28;
             speed = (unsigned short int)(((unsigned long int)sample.reading1 * max_voltage)/1024);
         }
         
