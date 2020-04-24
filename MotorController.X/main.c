@@ -12,16 +12,27 @@
 
 #include "head.h"
 
+//variables for saving data to the onboard memory
+#define PROPORTION_CONSTANT_ADDRESS (unsigned char)0
+#define INTEGRAL_CONSTANT_ADDRESS (unsigned char)1
+
 // for timing smaller than a single time loop.
 #define TIMER0_INITIAL 118
 
-#define LED_PERIOD 100
-unsigned short int led_duty_cycle = 25; // Duty cycle of LED as on_time[ms]
-volatile unsigned short int led_duty_cycle_counter = 0;
+volatile struct LED_TYPE
+{
+    unsigned short int period;
+    unsigned short int duty_cycle;
+    unsigned short int counter;
+} system_state;
+
+// #define LED_PERIOD 500
+// unsigned short int led_duty_cycle = 250; // Duty cycle of LED as on_time[ms]
+// volatile unsigned short int led_duty_cycle_counter = 0;
 
 unsigned short int pwm_duty_cycle = 0;//0x3FF; //[ms]
 // unsigned short int pwm_period = 500;
-volatile unsigned short int speed = 375; // 0->100
+volatile unsigned short int speed = 0; // 0->100
 unsigned short int in_voltage = 1001; // 16V, the highest this should receive, thus the default
 unsigned short int max_voltage = 501; // 7.6V max voltage the motor is allowed to run at (95% of 8V)
 unsigned short int min_voltage = 147; // 2.4V min voltage
@@ -29,17 +40,28 @@ unsigned short int min_voltage = 147; // 2.4V min voltage
 volatile unsigned char countdown = COUNTDOWN_TIME;
 volatile __bit measure_motor;
 volatile __bit measure_supply;
+volatile __bit measure_pot;
 
-volatile __bit proportion_set_mode; // indicates whether we are setting the proportion constant. This involves moving the speed up and down and reading the constant off of the pot. The error will be periodically reset
-#define SPEED_CHANGE_RATE (unsigned short int)500 //[ms]
+volatile unsigned char system_mode = 0; // indicates whether we are setting the proportion constant. This involves moving the speed up and down and reading the constant off of the pot. The error will be periodically reset
+#define SPEED_CHANGE_RATE (unsigned short int)1000 //[ms]
 volatile unsigned short int speed_change_count = SPEED_CHANGE_RATE;
 signed short int speed_delta = 30; //[Vadc]
-#define CLEAR_ERROR_RATE 10
-unsigned char clear_error_count = CLEAR_ERROR_RATE;
+volatile __bit clear_errors;
+volatile __bit error_state;
+
+//BUTTON
+volatile __bit increment_mode; // indicates whether we should move to the next mode
+#define BUTTON_BOUNCE (unsigned char)200
+volatile unsigned char button_bounce_count = BUTTON_BOUNCE; 
 
 //control variables
+signed long int ratio;
+//proportiom
 signed long int error = 0;
-unsigned char proportion_constant = 156;
+unsigned char proportion_constant;
+//integral
+signed long int error_sum = 0;
+unsigned char integral_constant;
 
 volatile union
 {
@@ -81,21 +103,30 @@ union reading // a union allowing byte combination from the adc
 } sample;
 // Save memory!
 
+void EEPROMWrite(unsigned char address, unsigned char data)
+{
+    while (WR); // wait for a previous write to finish
+    EEADR = address; //load the address
+    EEDATA = data; // load the data
+    GLOBAL_INTERRUPTS = OFF;
+    WREN = 1; // enable writes to occur
+    EECON2 = 0x55; // each of these bytes is a process required by the hardware
+    EECON2 = 0xAA;
+    WR = 1; // Initiate the write sequence
+    WREN = 0; // disable writes 
+    GLOBAL_INTERRUPTS = ON;
+}
+
+unsigned char EEPROMRead(unsigned char address)
+{
+    EEADR = address; // load the address
+    RD = 1; // initiate read
+    return EEDATA;    
+}
+
 enum CALC_PWM_PARAMS {ACTIVE_LOW=0, ACTIVE_HIGH=1};
 unsigned short int calcPWM(unsigned char period, unsigned short int ratio, unsigned char active_high)
 {
-    unsigned char max_ratio = 95;
-    unsigned char min_ratio = 1;
-
-    if (ratio >= max_ratio)
-    {
-        ratio = max_ratio;
-    }
-    else if (ratio <= min_ratio)
-    {
-        ratio = min_ratio;
-    }
-
     if (active_high)
     {
         return (4*((__uint24)period+1)*ratio)/100;
@@ -144,12 +175,9 @@ void __interrupt() ISR()
 {
     if (TIMER1_INTERRUPT_FLAG)
     {
-        if (!measure_supply)
-        {
-            CLK_LED = 1;
-            GO_DONE = 1;
-            measure_motor = 1;
-        }
+        // CLK_LED = 1;
+        GO_DONE = 1;
+        measure_motor = 1;
        
         TIMER1_INTERRUPT_FLAG = 0;
         TIMER1_INTERRUPT = OFF;
@@ -158,13 +186,10 @@ void __interrupt() ISR()
 
     if (TIMER2_INTERRUPT_FLAG)
     {
-        if (!measure_supply)
-        {
-            CLK_LED = 0;
-            TIMER1_INTERRUPT_FLAG = 0;
-            TIMER1_H = 0xFF; TIMER1_L = 0xDD;
-            TIMER1_INTERRUPT = ON;
-        }
+        // CLK_LED = 0;
+        TIMER1_INTERRUPT_FLAG = 0;
+        TIMER1_H = 0xFF; TIMER1_L = 0xDD;
+        TIMER1_INTERRUPT = ON;
         
         TIMER2_INTERRUPT_FLAG = 0;
     }
@@ -174,34 +199,37 @@ void __interrupt() ISR()
         TIMER0_INTERRUPT_FLAG = CLEAR; // clear interrupt flag since we are dealing with it
         TIMER0_COUNTER = TIMER0_INITIAL + 2; // reset counter, but also add 2 since it takes 2 clock cycles to get going
         // move counters, which is the job of this timer interrupt
-        led_duty_cycle_counter++; // increment the led counter
+        system_state.counter++; // increment the led counter
         // PWM_MOTOR = ~PWM_MOTOR;
+        // measure_pot = 1;
+        // measure_supply = 1;
         
-        if (led_duty_cycle_counter >= led_duty_cycle)
+        if (system_state.counter >= system_state.period)
         {
-            if (led_duty_cycle_counter >= LED_PERIOD)
-            {
-                led_duty_cycle_counter -= LED_PERIOD; //reset led counter safely
-                // led_state = ON; // we are in the ON part of the duty cycle
-                if (!measure_motor)
-                {
-                    measure_supply = 1;
-                }
-            }
-            else
-            {
-                PORTA_SH.IND_LED = OFF;
-                // PWM_MOTOR = OFF;
-            }
+            system_state.counter -= system_state.period; //reset led counter safely
+                
+            // led_state = ON; // we are in the ON part of the duty cycle
+            // if (!measure_motor)
+            // {
+            //     measure_supply = 1;
+            // } 
+        }
+        if (system_state.counter >= system_state.duty_cycle)
+        {
+            PORTA_SH.DAT_LED = OFF;
         }
         else
         {
-            PORTA_SH.IND_LED = ON; // within On part of duty cycle
+            PORTA_SH.DAT_LED = ON; // within On part of duty cycle
             // PWM_MOTOR = ON;
-            
-            
         }
-        if (proportion_set_mode)
+
+        //other timings
+        if (button_bounce_count)
+        {
+            button_bounce_count--;
+        }
+        if (system_mode >= 1)
         {
             if (speed_change_count)
             {
@@ -215,7 +243,7 @@ void __interrupt() ISR()
                 {
                     speed_delta = -1*speed_delta;
                     speed += 2*speed_delta;
-                    clear_error_count--;
+                    clear_errors = 1;
                 }
                 else if (speed < min_voltage)
                 {
@@ -230,14 +258,19 @@ void __interrupt() ISR()
         // LED = led_test_state; //TTT
         // IND_LED = ON;
     }
+    if (BUTTON_INTERRUPT_FLAG)
+    {
+        BUTTON_INTERRUPT_FLAG = CLEAR; // we are dealing with it
+        if (!BUTTON && !button_bounce_count) // button was pressed and therefore this will read low (and we avoided bounce)
+        {
+            increment_mode = 1;
+            button_bounce_count = BUTTON_BOUNCE;
+        }
+    }
 
 }
 
 void main() {
-
-    signed long int ratio;
-    proportion_set_mode = 0;
-
     //set up IO
     DAT_LED_TYPE = DIGITAL;
     DAT_LED_PIN = OUTPUT;
@@ -251,7 +284,7 @@ void main() {
 
     PORTA_SH.byte = 0;
     // PORTA_SH.DAT_LED = ON;
-    PORTA_SH.CLK_LED = ON;
+    // PORTA_SH.CLK_LED = ON;
 
     //setup PWM and timer 2
     PWM_MOTOR_PIN = OUTPUT;
@@ -266,10 +299,9 @@ void main() {
 
     //timer1
     TIMER1_H =0x00; TIMER1_L = 0x00;
-    TIMER1_INTERRUPT = OFF;
+    // TIMER1_INTERRUPT = OFF;
     TIMER1 = ON;
 
-    
 
     // Set up timer0
     // calculate intial for accurate timing $ inital = TimerMax-((Delay*Fosc)/(Prescaler*4))
@@ -280,17 +312,30 @@ void main() {
     TIMER0_INTERRUPT = ON; // enable timer0 interrupts
 
     //Set up ADC
-    MOTOR_READING_PIN = INPUT;
-    MOTOR_READING_TYPE = ANALOG;
+    // MOTOR_READING_PIN = INPUT;
+    // MOTOR_READING_TYPE = ANALOG;
     ADC_VOLTAGE_REFERENCE = INTERNAL;
     ADC_CHANNEL2 = 1; ADC_CHANNEL1 = 0; ADC_CHANNEL0 = 1; // Set the channel to AN5 (where the motor feedback is)
     ADC_CLOCK_SOURCE2 = 0; ADC_CLOCK_SOURCE1 = 0; ADC_CLOCK_SOURCE0 = 1; // Set the clock rate of the ADC
     ADC_OUTPUT_FORMAT = RIGHT; // right Shifted ADC_RESULT_HIGH contains the first 2 bits
-    ADC_INTERRUPT = OFF; // by default these aren't necessary
+    // ADC_INTERRUPT = OFF; // by default these aren't necessary
     ADC_ON = ON; // turn it on
 
     //setup flashing led
-    // led_duty_cycle = 185; //[ms]
+    // system_state.period = 500;
+    // system_state.duty_cycle = 250;
+    // system_state.counter = 0;
+
+    //setup button
+    // BUTTON_PIN = INPUT;
+    BUTTON_INTERRUPT = ON;
+    RA_INTERRUPT = ON;
+
+    // load system variables
+    // proportion_constant = EEPROMRead(PROPORTION_CONSTANT_ADDRESS);
+    // integral_constant = EEPROMRead(INTEGRAL_CONSTANT_ADDRESS);
+    proportion_constant = 40; // x/100
+    integral_constant = 1; // x/100
 
     //turn on interrupts
     GLOBAL_INTERRUPTS = ON;
@@ -299,102 +344,10 @@ void main() {
 
     while (1)
     {
-        // if (0 && !countdown) // time to take a measurement of the motor speed/voltage
-        // {
-        //     GLOBAL_INTERRUPTS = OFF;
-        //     countdown = COUNTDOWN_TIME;
-        //     PWM_CONTROL = OFF; // turn off the PWM
-        //     TIMER2_INTERRUPT_FLAG = 0;
-        //     TIMER2 = 0; // Set timer to 0
-        //     // CLK_LED = OFF; //TTT
-
-
-        //     while(!TIMER2_INTERRUPT_FLAG); // wait until timer2 equals PWM_PERIOD, anbout 200us
-        //     // CLK_LED = ON; //TTT
-            
-        //     //reset
-        //     // TIMER2 = 0;
-        //     PWM_CONTROL = (SINGLE_OUTPUT<<PWM_MODE) | (ACTIVE_HIGH_ACTIVE_HIGH<<PWM_OUTPUT) | ((pwm_duty_cycle & 0b11)<<PWM_DUTYCYCLE_LSB); //PWM register set
-        //     TIMER2_INTERRUPT_FLAG = 0;
-
-        //     GO_DONE = 1; //begin an ADC reading
-        //     CLK_LED = OFF;
-        //     while(GO_DONE); // wait until the measurement is made
-
-        //     GO_DONE = 1; //begin an ADC reading
-        //     CLK_LED = ON;
-        //     // save the previous sample
-        //     sample.reading1_array[1] = ADC_RESULT_HIGH;
-        //     sample.reading1_array[0] = ADC_RESULT_LOW;
-        //     while(GO_DONE); // wait until the measurement is made
-
-
-        //     GO_DONE = 1; //begin an ADC reading
-        //     CLK_LED = OFF;
-        //     // save the previous sample
-        //     sample.reading2_array[1] = ADC_RESULT_HIGH;
-        //     sample.reading2_array[0] = ADC_RESULT_LOW;
-        //     while(GO_DONE); // wait until the measurement is made
-        //     CLK_LED = ON;
-
-
-        //     //save final sample
-        //     sample.reading3_array[1] = ADC_RESULT_HIGH;
-        //     sample.reading3_array[0] = ADC_RESULT_LOW;
-
-        //     // pwm_duty_cycle = calcPWM(PWM_PERIOD, speed); // no control, speed is a ratio
-
-        //     // if (((unsigned long int)sample.reading1*100)/max_voltage < speed)
-        //     // {
-        //     //     if (pwm_duty_cycle>(0x3FF-10)) // if we can't safely add
-        //     //     {
-        //     //         pwm_duty_cycle = 0x3FF; //be max
-        //     //     }
-        //     //     else
-        //     //     {
-        //     //         pwm_duty_cycle += 10;
-        //     //     }
-                
-        //     // }
-        //     // else
-        //     // {
-        //     //     pwm_duty_cycle -= 10;
-        //     // }
-        //     // PWM_DUTYCYCLE_MSB = (unsigned char)(pwm_duty_cycle>>2);
-
-
-        //     // error = speed - ((unsigned long int)medianValue(sample.readings)*100)/max_voltage;
-        //     // pwm_duty_cycle = calcPWM(PWM_PERIOD, speed+(((signed long int)proportion_constant*error)/100));
-
-        //     error = (signed long int)speed - medianValue(sample.readings);
-        //     // if (!clear_error_count)
-        //     // {
-        //     //     error = 0;
-        //     // }
-        //     ratio = ((speed+(error*proportion_constant)/100)*(unsigned long int)100)/max_voltage;
-        //     // ratio = ((unsigned long int)speed*100)/in_voltage;
-
-        //     // if (!proportion_set_mode && (ratio > 100 || ratio < 0))
-        //     // {
-        //     //     ratio = ((unsigned long int)speed*100)/in_voltage;
-        //     // }
-            
-        //     pwm_duty_cycle = calcPWM(PWM_PERIOD, ratio);
-        //     PWM_DUTYCYCLE_MSB = (unsigned char)(pwm_duty_cycle>>2);
-        //     // reset this so the lsb is in the mix
-        //     PWM_CONTROL = (SINGLE_OUTPUT<<PWM_MODE) | (ACTIVE_LOW_ACTIVE_LOW<<PWM_OUTPUT) | ((pwm_duty_cycle & 0b11)<<PWM_DUTYCYCLE_LSB);
-
-        //     //reset
-        //     // PWM_CONTROL = (SINGLE_OUTPUT<<PWM_MODE) | (ACTIVE_HIGH_ACTIVE_HIGH<<PWM_OUTPUT) | ((pwm_duty_cycle & 0b11)<<PWM_DUTYCYCLE_LSB); //PWM register set
-            
-        //     GLOBAL_INTERRUPTS = ON;
-
-        // }
-
         if (measure_motor)
         {
             // CLK_LED = OFF;
-            PORTA_SH.DAT_LED = ~PORTA_SH.DAT_LED;
+            // PORTA_SH.DAT_LED = ~PORTA_SH.DAT_LED;
             
             GLOBAL_INTERRUPTS = OFF;
 
@@ -427,17 +380,45 @@ void main() {
             // speed = 250;
             
             error = (signed long int)speed - medianValue(sample.readings);
+            error_sum += error;
+            if (clear_errors)
+            {
+                clear_errors = 0;
+                error = 0;
+                error_sum = 0;
+                PORTA_SH.CLK_LED = OFF;
+            }
+
+            if (error > 200 || error < -200)
+            {
+                PORTA_SH.IND_LED = ON;
+            }
+            else
+            {
+                PORTA_SH.IND_LED = OFF;
+            }
+            
             // error = (error*proportion_constant)/100;
 
-           ratio = (((signed long int)speed*22)+(error*proportion_constant))/in_voltage;
-
-            if (ratio <= 0) // error magnitude too large
+           // ratio = (((signed long int)speed*22)+(error*proportion_constant))/in_voltage;
+            if (!error_state)
+            {
+                ratio = (((signed long int)speed+(error*proportion_constant)/100+(error_sum*integral_constant)/100)*22)/in_voltage;
+            }
+            else
             {
                 ratio = 0;
             }
+            
+            // ratio = ((signed long int)speed*22)/in_voltage;
+
+            if (ratio <= 0) // error magnitude too large
+            {
+                ratio = 1;
+            }
             else if (ratio > 100)
             {
-                ratio = 100;
+                ratio = 95;
             }
 
             
@@ -447,75 +428,163 @@ void main() {
             PWM_CONTROL = (SINGLE_OUTPUT<<PWM_MODE) | (ACTIVE_LOW_ACTIVE_LOW<<PWM_OUTPUT) | ((pwm_duty_cycle & 0b11)<<PWM_DUTYCYCLE_LSB);
 
 
+            measure_pot = 1;
 
             // // CLK_LED = ON;
             // GLOBAL_INTERRUPTS = ON;
         }
 
-        if (measure_supply)
-        {
+        // if (measure_supply)
+        // {
             
-            if (PWM_MOTOR) // if supply is high
-            {
+        //     if (PWM_MOTOR) // if supply is high
+        //     {
                 
 
-                GLOBAL_INTERRUPTS = OFF;
-                GO_DONE = 1;
-                while (GO_DONE);
-                CLK_LED = 1;
-                sample.reading1_array[1] = ADC_RESULT_HIGH;
-                sample.reading1_array[0] = ADC_RESULT_LOW;
+        //         GLOBAL_INTERRUPTS = OFF;
+        //         GO_DONE = 1;
+        //         while (GO_DONE);
+        //         // CLK_LED = 1;
+        //         sample.reading1_array[1] = ADC_RESULT_HIGH;
+        //         sample.reading1_array[0] = ADC_RESULT_LOW;
 
-                if (sample.reading1 > 0)
+        //         if (sample.reading1 > 0)
+        //         {
+        //             if (sample.reading1 < max_voltage || sample.reading1 > 1001) // we are less than the highest setting
+        //             {
+        //                 error_state = 1;
+        //                 PORTA_SH.CLK_LED = ON;
+        //             }
+        //             else
+        //             {
+        //                 error_state = 0;
+        //                 in_voltage = sample.reading1;
+        //                 PORTA_SH.CLK_LED = OFF;
+        //             }                    
+                    
+                    
+        //         }
+
+        //         GLOBAL_INTERRUPTS = ON;
+
+        //         measure_motor = 0;
+        //         measure_supply = 0;
+
+        //     }
+            
+        // }
+
+
+        if (measure_pot)
+        {
+            measure_pot = 0;
+            
+
+            GLOBAL_INTERRUPTS = OFF;
+            ADC_CHANNEL2 = 1; ADC_CHANNEL1 = 0; ADC_CHANNEL0 = 0; // Set the channel to AN4 (where the POT is)
+            ADC_PAUSE; // wait for small amount of time for the channels to redirect
+            
+            GO_DONE = 1; // begin an ADC read
+
+            while(GO_DONE); // wait until the first measurement (initiated by the timer) is made
+            
+            GO_DONE = 1; //BEGIN second measurement
+
+            sample.reading1_array[1] = ADC_RESULT_HIGH; //SAVE first measurement
+            sample.reading1_array[0] = ADC_RESULT_LOW;
+
+            while(GO_DONE);
+
+            sample.reading2_array[1] = ADC_RESULT_HIGH; //SAVE second measurement
+            sample.reading2_array[0] = ADC_RESULT_LOW;
+
+            ADC_CHANNEL2 = 1; ADC_CHANNEL1 = 0; ADC_CHANNEL0 = 1; // Set the channel back to AN5 (where the Motor feedback is)
+            
+            GLOBAL_INTERRUPTS = ON;
+
+            // PORTA_SH.CLK_LED = ~PORTA_SH.CLK_LED;
+
+            
+            // speed = 250;
+            
+
+            if (system_mode == 0) // basic speed set mode
+            {
+                system_state.period = max_voltage;
+                system_state.duty_cycle = speed;
+
+                speed = (unsigned short int)((((unsigned long int)sample.reading1 + sample.reading2) * max_voltage)/2048);
+
+                if (increment_mode)
                 {
-                    
-                    // in_voltage = sample.reading1;
-                    in_voltage = sample.reading1;
-                    
+                    increment_mode = 0;
+
+                    if (sample.reading1 < 5)
+                    {
+                        speed = 150;
+                        system_mode++;
+                    }
+                    else
+                    {
+                        clear_errors = 1;
+                        PORTA_SH.CLK_LED = ON;
+                    }
                 }
 
-                GLOBAL_INTERRUPTS = ON;
-
-                measure_motor = 0;
-                measure_supply = 0;
-
             }
-            
-        }
+            else if (system_mode == 1) //proportion set mode
+            {
+                system_state.duty_cycle = 0xFFFF;
+                proportion_constant = (unsigned char)(((unsigned long int)sample.reading1*195)/1000);
 
-        //read pot for P gain
+                if (increment_mode)
+                {
+                    increment_mode = 0;
+                    system_mode = 2;
 
-        proportion_set_mode = 0;
-        
+                    EEPROMWrite(PROPORTION_CONSTANT_ADDRESS, proportion_constant);
+                }
+            }
+            else if (system_mode == 2)
+            {
+                system_state.duty_cycle = 0;
+                integral_constant = (unsigned char)(((unsigned long int)sample.reading1*97)/100);
 
-        ADC_CHANNEL2 = 1; ADC_CHANNEL1 = 0; ADC_CHANNEL0 = 0; // Set the channel to AN4 (where the POT is)
-        ADC_PAUSE; // wait for small amount of time for the channels to redirect
-        GO_DONE = 1; // begin an ADC read
-        while (GO_DONE); // wait for the adc to finish
-        sample.reading1_array[1] = ADC_RESULT_HIGH;
-        sample.reading1_array[0] = ADC_RESULT_LOW;
-        // proportion_constant = sample.reading1 >> 2; // 8 bits is enough
-        // speed = ((long int)sample.reading1*97)/1000;     //((unsigned long int)sample.reading1*312)/100 + 147; // convert speed to desired range
-        // speed = 1023;
+                if (increment_mode)
+                {
+                    increment_mode = 0;
+                    system_mode = 1;
 
-        ADC_CHANNEL2 = 1; ADC_CHANNEL1 = 0; ADC_CHANNEL0 = 1; // Set the channel back to AN5 (where the Motor feedback is)
-        ADC_PAUSE;
-
-        if (proportion_set_mode)
-        {
-            speed_delta = 0;
-            speed = 150;
-
-            proportion_constant = (unsigned char)(((unsigned long int)sample.reading1*195)/1000);
-        }
-        else
-        {
-            proportion_constant = 52;//28;
-            speed = (unsigned short int)(((unsigned long int)sample.reading1 * max_voltage)/1024);
+                    EEPROMWrite(INTEGRAL_CONSTANT_ADDRESS, integral_constant);
+                }
+            }
         }
         
+
+        // if (increment_mode)
+        // {
+        //     increment_mode = 0;
+        //     clear_errors = 1;
+        //     PORTA_SH.CLK_LED = ON;
+        // }
+
         
 
+        // if (proportion_set_mode)
+        // {
+        //     speed_delta = 0;
+        //     speed = 150;
+
+        //     proportion_constant = (unsigned char)(((unsigned long int)sample.reading1*195)/1000);
+        // }
+        // else
+        // {
+        //     // proportion_constant = 52;//28;
+        //     speed = (unsigned short int)(((unsigned long int)sample.reading1 * max_voltage)/1024);
+        // }
+        
+        
+        // speed = system_state.duty_cycle;
         PORTA = PORTA_SH.byte; //write out IO register to avoid read-modify-write errors
 
     }

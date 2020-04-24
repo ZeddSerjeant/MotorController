@@ -27,6 +27,18 @@ enum FLAGS {OFF=0, OUTPUT=0, INTERNAL=0, CLEAR=0, DIGITAL=0, ANALOG=1, INPUT=1, 
 #define MOTOR_READING_PIN TRISC1
 #define MOTOR_READING_TYPE ANS5
 
+// button
+#define BUTTON RA3
+#define BUTTON_PIN TRISA3 
+#define BUTTON_INTERRUPT IOCA3
+#define RA_INTERRUPT RAIE
+#define BUTTON_INTERRUPT_FLAG RAIF
+
+//POT
+#define POT RC0
+#define POT_PIN TRISC0
+#define POT_TYPE ANS4
+
 //TIMER0
 #define PRESCALER PSA
 #define TIMER0_COUNTER TMR0
@@ -89,4 +101,4 @@ enum FLAGS {OFF=0, OUTPUT=0, INTERNAL=0, CLEAR=0, DIGITAL=0, ANALOG=1, INPUT=1, 
 #define ADC_INTERRUPT ADIE
 #define ADC_INTERRUPT_FLAG ADIF
 #define ADC_ON ADON
-#define ADC_PAUSE asm("NOP;");asm("NOP;");asm("NOP;");asm("NOP;");asm("NOP;");asm("NOP;");asm("NOP;")
+#define ADC_PAUSE asm("NOP;");asm("NOP;");asm("NOP;");asm("NOP;");asm("NOP;");asm("NOP;")
