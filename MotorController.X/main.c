@@ -19,6 +19,7 @@
 // for timing smaller than a single time loop.
 #define TIMER0_INITIAL 118
 
+// represents an LED.
 volatile struct LED_TYPE
 {
     unsigned short int period;
@@ -26,24 +27,22 @@ volatile struct LED_TYPE
     unsigned short int counter;
 } system_state;
 
-// #define LED_PERIOD 500
-// unsigned short int led_duty_cycle = 250; // Duty cycle of LED as on_time[ms]
-// volatile unsigned short int led_duty_cycle_counter = 0;
 
 unsigned short int pwm_duty_cycle = 0;//0x3FF; //[ms]
 // unsigned short int pwm_period = 500;
-volatile unsigned short int speed = 0; // 0->100
+volatile unsigned short int speed = 0; // 0->1024, voltage as represented on the POT
 unsigned short int in_voltage = 1001; // 16V, the highest this should receive, thus the default
 unsigned short int max_voltage = 501; // 7.6V max voltage the motor is allowed to run at (95% of 8V)
 unsigned short int min_voltage = 147; // 2.4V min voltage
-#define COUNTDOWN_TIME (unsigned char)5 // [ms] represents the amount of time to check the voltage of the motor. 
-volatile unsigned char countdown = COUNTDOWN_TIME;
 volatile __bit measure_motor;
 volatile __bit measure_supply;
 volatile __bit measure_pot;
 
-volatile unsigned char system_mode = 0; // indicates whether we are setting the proportion constant. This involves moving the speed up and down and reading the constant off of the pot. The error will be periodically reset
+// when the constants are being set (>1 system mode) then the speed oscillates automatically
+//    indicates whether we are setting the proportion constant. This involves moving the speed up and down and reading the 
+//    constant off of the pot. The error will be periodically reset
 #define SPEED_CHANGE_RATE (unsigned short int)1000 //[ms]
+volatile unsigned char system_mode = 0; 
 volatile unsigned short int speed_change_count = SPEED_CHANGE_RATE;
 signed short int speed_delta = 30; //[Vadc]
 volatile __bit clear_errors;
@@ -56,13 +55,14 @@ volatile unsigned char button_bounce_count = BUTTON_BOUNCE;
 
 //control variables
 signed long int ratio;
-//proportiom
+//proportion
 signed long int error = 0;
 unsigned char proportion_constant;
 //integral
 signed long int error_sum = 0;
 unsigned char integral_constant;
 
+// shadow register for PortA, so as to not suffer from read/modify/write errors
 volatile union
 {
     unsigned char byte;
@@ -103,6 +103,7 @@ union reading // a union allowing byte combination from the adc
 } sample;
 // Save memory!
 
+
 void EEPROMWrite(unsigned char address, unsigned char data)
 {
     while (WR); // wait for a previous write to finish
@@ -124,6 +125,7 @@ unsigned char EEPROMRead(unsigned char address)
     return EEDATA;    
 }
 
+//a function (and input defaults) for calculating the the value for the dutycycle register based on the period and a ratio
 enum CALC_PWM_PARAMS {ACTIVE_LOW=0, ACTIVE_HIGH=1};
 unsigned short int calcPWM(unsigned char period, unsigned short int ratio, unsigned char active_high)
 {
@@ -137,6 +139,7 @@ unsigned short int calcPWM(unsigned char period, unsigned short int ratio, unsig
     }
 }
 
+//median of three values
 unsigned short int medianValue(unsigned short int samples[]) // returns the index of the middle value
 {
    if (samples[0] > samples[1]) 
@@ -173,9 +176,9 @@ unsigned short int medianValue(unsigned short int samples[]) // returns the inde
 
 void __interrupt() ISR()
 {
+    // turned on by timer 2
     if (TIMER1_INTERRUPT_FLAG)
     {
-        // CLK_LED = 1;
         GO_DONE = 1;
         measure_motor = 1;
        
@@ -184,9 +187,9 @@ void __interrupt() ISR()
         
     }
 
+    //connected to the PWM
     if (TIMER2_INTERRUPT_FLAG)
     {
-        // CLK_LED = 0;
         TIMER1_INTERRUPT_FLAG = 0;
         TIMER1_H = 0xFF; TIMER1_L = 0xDD;
         TIMER1_INTERRUPT = ON;
@@ -194,6 +197,7 @@ void __interrupt() ISR()
         TIMER2_INTERRUPT_FLAG = 0;
     }
 
+    //millisecond interrupt for LED control
     if (TIMER0_INTERRUPT_FLAG) // if the timer0 interrupt flag was set (timer0 triggered)
     {
         TIMER0_INTERRUPT_FLAG = CLEAR; // clear interrupt flag since we are dealing with it
@@ -207,12 +211,7 @@ void __interrupt() ISR()
         if (system_state.counter >= system_state.period)
         {
             system_state.counter -= system_state.period; //reset led counter safely
-                
-            // led_state = ON; // we are in the ON part of the duty cycle
-            // if (!measure_motor)
-            // {
-            //     measure_supply = 1;
-            // } 
+            measure_supply = 1; // every so often, ensure the supply is at the right level, and use it to set the ratios more accurately
         }
         if (system_state.counter >= system_state.duty_cycle)
         {
@@ -252,11 +251,6 @@ void __interrupt() ISR()
                 }
             }
         }
-
-        
-        // IND_LED = IND_led_state;
-        // LED = led_test_state; //TTT
-        // IND_LED = ON;
     }
     if (BUTTON_INTERRUPT_FLAG)
     {
@@ -283,8 +277,6 @@ void main() {
 
 
     PORTA_SH.byte = 0;
-    // PORTA_SH.DAT_LED = ON;
-    // PORTA_SH.CLK_LED = ON;
 
     //setup PWM and timer 2
     PWM_MOTOR_PIN = OUTPUT;
@@ -321,11 +313,6 @@ void main() {
     // ADC_INTERRUPT = OFF; // by default these aren't necessary
     ADC_ON = ON; // turn it on
 
-    //setup flashing led
-    // system_state.period = 500;
-    // system_state.duty_cycle = 250;
-    // system_state.counter = 0;
-
     //setup button
     // BUTTON_PIN = INPUT;
     BUTTON_INTERRUPT = ON;
@@ -340,19 +327,12 @@ void main() {
     //turn on interrupts
     GLOBAL_INTERRUPTS = ON;
 
-    // PORTA_SH.CLK_LED = ON;
-
     while (1)
     {
         if (measure_motor)
-        {
-            // CLK_LED = OFF;
-            // PORTA_SH.DAT_LED = ~PORTA_SH.DAT_LED;
-            
+        {            
             GLOBAL_INTERRUPTS = OFF;
 
-            // GO_DONE = 1; //begin an ADC reading
-            // CLK_LED = OFF;
             while(GO_DONE); // wait until the first measurement (initiated by the timer) is made
             
             GO_DONE = 1; //BEGIN second measurement
@@ -398,9 +378,6 @@ void main() {
                 PORTA_SH.IND_LED = OFF;
             }
             
-            // error = (error*proportion_constant)/100;
-
-           // ratio = (((signed long int)speed*22)+(error*proportion_constant))/in_voltage;
             if (!error_state)
             {
                 ratio = (((signed long int)speed+(error*proportion_constant)/100+(error_sum*integral_constant)/100)*22)/in_voltage;
@@ -410,8 +387,6 @@ void main() {
                 ratio = 0;
             }
             
-            // ratio = ((signed long int)speed*22)/in_voltage;
-
             if (ratio <= 0) // error magnitude too large
             {
                 ratio = 1;
@@ -430,49 +405,47 @@ void main() {
 
             measure_pot = 1;
 
-            // // CLK_LED = ON;
-            // GLOBAL_INTERRUPTS = ON;
         }
 
-        // if (measure_supply)
-        // {
+        if (measure_supply)
+        {
             
-        //     if (PWM_MOTOR) // if supply is high
-        //     {
+            if (PWM_MOTOR) // if supply is high
+            {
                 
 
-        //         GLOBAL_INTERRUPTS = OFF;
-        //         GO_DONE = 1;
-        //         while (GO_DONE);
-        //         // CLK_LED = 1;
-        //         sample.reading1_array[1] = ADC_RESULT_HIGH;
-        //         sample.reading1_array[0] = ADC_RESULT_LOW;
+                GLOBAL_INTERRUPTS = OFF;
+                GO_DONE = 1;
+                while (GO_DONE);
+                // CLK_LED = 1;
+                sample.reading1_array[1] = ADC_RESULT_HIGH;
+                sample.reading1_array[0] = ADC_RESULT_LOW;
 
-        //         if (sample.reading1 > 0)
-        //         {
-        //             if (sample.reading1 < max_voltage || sample.reading1 > 1001) // we are less than the highest setting
-        //             {
-        //                 error_state = 1;
-        //                 PORTA_SH.CLK_LED = ON;
-        //             }
-        //             else
-        //             {
-        //                 error_state = 0;
-        //                 in_voltage = sample.reading1;
-        //                 PORTA_SH.CLK_LED = OFF;
-        //             }                    
+                if (sample.reading1 > 0)
+                {
+                    if (sample.reading1 < max_voltage || sample.reading1 > 1001) // we are less than the highest setting
+                    {
+                        error_state = 1;
+                        PORTA_SH.CLK_LED = ON;
+                    }
+                    else
+                    {
+                        error_state = 0;
+                        in_voltage = sample.reading1;
+                        PORTA_SH.CLK_LED = OFF;
+                    }                    
                     
                     
-        //         }
+                }
 
-        //         GLOBAL_INTERRUPTS = ON;
+                GLOBAL_INTERRUPTS = ON;
 
-        //         measure_motor = 0;
-        //         measure_supply = 0;
-
-        //     }
+                measure_supply = 0;
+                measure_pot = 0;
+                measure_motor = 0;
+            }
             
-        // }
+        }
 
 
         if (measure_pot)
@@ -501,12 +474,6 @@ void main() {
             ADC_CHANNEL2 = 1; ADC_CHANNEL1 = 0; ADC_CHANNEL0 = 1; // Set the channel back to AN5 (where the Motor feedback is)
             
             GLOBAL_INTERRUPTS = ON;
-
-            // PORTA_SH.CLK_LED = ~PORTA_SH.CLK_LED;
-
-            
-            // speed = 250;
-            
 
             if (system_mode == 0) // basic speed set mode
             {
@@ -559,31 +526,7 @@ void main() {
                 }
             }
         }
-        
-
-        // if (increment_mode)
-        // {
-        //     increment_mode = 0;
-        //     clear_errors = 1;
-        //     PORTA_SH.CLK_LED = ON;
-        // }
-
-        
-
-        // if (proportion_set_mode)
-        // {
-        //     speed_delta = 0;
-        //     speed = 150;
-
-        //     proportion_constant = (unsigned char)(((unsigned long int)sample.reading1*195)/1000);
-        // }
-        // else
-        // {
-        //     // proportion_constant = 52;//28;
-        //     speed = (unsigned short int)(((unsigned long int)sample.reading1 * max_voltage)/1024);
-        // }
-        
-        
+                
         // speed = system_state.duty_cycle;
         PORTA = PORTA_SH.byte; //write out IO register to avoid read-modify-write errors
 
