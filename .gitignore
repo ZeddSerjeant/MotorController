@@ -12,5 +12,6 @@ util/~*
 
 hardware/render/*
 hardware/*.autosave
+report/*.pdf
 
 git.bat
